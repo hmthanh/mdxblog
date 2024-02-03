@@ -1,6 +1,6 @@
 <script>
   import Card from "$lib/components/Card.svelte"
-  import EmailIcon from "$lib/components/Icons/Email.svelte"
+  import EmailIcon from "$lib/core/Icons/Email.svelte"
   import ExternalLink from "$lib/components/ExternalLink.svelte"
   import website from "$lib/config/website"
   const { contactEmail, facebookPageName, telegramUsername, twitterUserId, twitterUsername, wireUsername } = website

@@ -1,5 +1,5 @@
 <script>
-  import CameraIcon from "$lib/components/Icons/Camera.svelte"
+  import CameraIcon from "$lib/core/Icons/Camera.svelte"
 </script>
 
 <!-- <header class="header-container">

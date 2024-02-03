@@ -1,7 +1,12 @@
 <script>
   import { browser } from "$app/environment"
-  import { MEDIA_QUERY, colorSchemes, disableAnimation, getSystemTheme, getTheme } from "$lib/config/themeStore/helper.js"
-  // import { colorSchemes, MEDIA } from "./constants"
+  import {
+    MEDIA_QUERY,
+    colorSchemes,
+    disableAnimation,
+    getSystemTheme,
+    getTheme,
+  } from "$lib/config/themeStore/helper.js"
   import themeStore, { setTheme } from "./themeStore"
 
   import ThemeScript from "./ThemeScript.svelte"
