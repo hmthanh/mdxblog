@@ -70,6 +70,7 @@
     "clsx": "^2.1.0",
     "reading-time-estimator": "^1.9.4",
     "slash": "^5.1.0",
-    "title": "^3.5.3"
+    "title": "^3.5.3",
+    "zod": "^3.22.4"
   }
 }
