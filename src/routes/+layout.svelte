@@ -19,14 +19,19 @@
   import Footer from "$lib/components/Footer.svelte"
   import Header from "$lib/components/Header.svelte"
   import PWA from "$lib/components/PWA.svelte"
+  import ThemeProvider from "$lib/config/theme"
+  import SvelteTheme from "$lib/config/themeStore/SvelteTheme.svelte"
 </script>
 
 <PWA />
+<SvelteTheme />
 <div class="container">
   <Header />
+  <!-- <ThemeProvider> -->
   <main class="main-container">
     <slot />
   </main>
+  <!-- </ThemeProvider> -->
   <Footer />
 </div>
 

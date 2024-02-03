@@ -2,7 +2,7 @@
 // import type { NextraConfig } from './types'
 
 // imports
-import path from "path"
+// import path from "path"
 
 // constants
 export const MARKDOWN_EXTENSIONS = ["md", "mdx"]
@@ -13,7 +13,7 @@ export const DYNAMIC_META_FILENAME = "_meta.js"
 
 export const CWD = process.cwd()
 
-export const PUBLIC_DIR = path.join(CWD, "public")
+// export const PUBLIC_DIR = path.join(CWD, "public")
 
 export const NEXTRA_INTERNAL = Symbol("nextra_internal")
 
