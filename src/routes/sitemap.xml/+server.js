@@ -1,5 +1,5 @@
-import website from '$lib/config/website';
-import { error } from '@sveltejs/kit';
+import website from "$lib/config/website";
+import { error } from "@sveltejs/kit";
 
 export const prerender = true;
 
@@ -19,52 +19,52 @@ const render = (pages, posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 	>
 
 	${pages
-		.map(
-			(element) => `
+    .map(
+      (element) => `
 	<url>
 	  <loc>${element}</loc>
 		<lastmod>${`${process.env.VITE_BUILD_TIME}`}</lastmod>
 	</url>`,
-		)
-		.join('\n')}
+    )
+    .join("\n")}
 
 	${posts
-		.map((element) => {
-			const { lastUpdated, slug } = element;
-			return `
+    .map((element) => {
+      const { lastUpdated, slug } = element;
+      return `
 	<url>
 	  <loc>${siteUrl}/${slug}</loc>
 		<lastmod>${`${new Date(lastUpdated).toISOString()}`}</lastmod>
 	</url>
 	`;
-		})
-		.join('')}
+    })
+    .join("")}
 </urlset>`;
 
 /** @type {import('./$types').RequestHandler} */
 export async function GET({ setHeaders }) {
-	try {
-		const mdModules = import.meta.glob('../../content/blog/**/index.md');
-		const posts = await Promise.all(
-			Object.keys(mdModules).map(async (path) => {
-				const slug = path.split('/').at(-2);
-				const { metadata } = await mdModules[path]();
-				const { lastUpdated } = metadata;
-				return { lastUpdated, slug };
-			}),
-		);
+  try {
+    const mdModules = import.meta.glob("../../content/blog/**/index.md");
+    const posts = await Promise.all(
+      Object.keys(mdModules).map(async (path) => {
+        const slug = path.split("/").at(-2);
+        const { metadata } = await mdModules[path]();
+        const { lastUpdated } = metadata;
+        return { lastUpdated, slug };
+      }),
+    );
 
-		const pagePaths = ['', '/contact'];
-		const pages = pagePaths.map((element) => `${siteUrl}${element}`);
+    const pagePaths = ["", "/contact"];
+    const pages = pagePaths.map((element) => `${siteUrl}${element}`);
 
-		setHeaders({
-			'Cache-Control': 'max-age=0, s-max-age=600',
-			'Content-Type': 'application/xml',
-		});
+    setHeaders({
+      "Cache-Control": "max-age=0, s-max-age=600",
+      "Content-Type": "application/xml",
+    });
 
-		return new Response(render(pages, posts));
-	} catch (err) {
-		console.error(`Error in sitemap.xml: ${err}`);
-		error(500, err);
-	}
+    return new Response(render(pages, posts));
+  } catch (err) {
+    console.error(`Error in sitemap.xml: ${err}`);
+    error(500, err);
+  }
 }

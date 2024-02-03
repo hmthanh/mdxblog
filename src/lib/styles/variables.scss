@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-@use 'sass:color';
+@use "sass:color";
 
 /* SCSS Custom Properties Definitions */
 // Widths
-$max-width-none: 'none';
+$max-width-none: "none";
 $max-width-xs: 20rem;
 $max-width-sm: 24rem;
 $max-width-md: 28rem;
@@ -13,7 +13,7 @@ $max-width-xl: 36rem;
 $max-width-2xl: 42rem;
 $max-width-3xl: 48rem;
 $max-width-4xl: 56rem;
-$max-width-full: '100%';
+$max-width-full: "100%";
 $max-width-wrapper: $max-width-2xl;
 $desktop-breakpoint: 42rem;
 
@@ -36,10 +36,10 @@ $spacing-24: 6rem;
 $spacing-32: 8rem;
 
 // Fonts
-$font-family-serif: 'Source Sans Pro', 'Lustria', 'Noto Serif', 'Merriweather', 'Georgia', 'Cambria',
-	'Times New Roman', 'Times', serif;
+$font-family-serif: "Source Sans Pro", "Lustria", "Noto Serif", "Merriweather",
+  "Georgia", "Cambria", "Times New Roman", "Times", serif;
 $font-body: $font-family-serif;
-$font-heading: 'Lora', $font-family-serif;
+$font-heading: "Lora", $font-family-serif;
 
 // Font Weight
 // check imported weights and styles in gatsby-browser.jsx
