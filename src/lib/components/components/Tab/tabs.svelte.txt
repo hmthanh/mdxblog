@@ -1,0 +1,212 @@
+<!-- import { Tab as HeadlessTab } from '@headlessui/react'
+import cn from 'clsx'
+import type { ComponentProps, ReactElement, ReactNode } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+
+type TabItem = string | ReactNode
+
+type TabObjectItem = {
+  label: TabItem
+  disabled: boolean
+}
+
+function isTabObjectItem(item: unknown): item is TabObjectItem {
+  return !!item && typeof item === 'object' && 'label' in item
+}
+
+function _Tabs({
+  items,
+  selectedIndex: _selectedIndex,
+  defaultIndex = 0,
+  onChange,
+  children,
+  storageKey
+}: {
+  items: (TabItem | TabObjectItem)[]
+  selectedIndex?: number
+  defaultIndex?: number
+  onChange?: (index: number) => void
+  children: ReactNode
+  storageKey?: string
+}): ReactElement {
+  const [selectedIndex, setSelectedIndex] = useState(defaultIndex)
+
+  useEffect(() => {
+    if (_selectedIndex !== undefined) {
+      setSelectedIndex(_selectedIndex)
+    }
+  }, [_selectedIndex])
+
+  useEffect(() => {
+    if (!storageKey) {
+      // Do not listen storage events if there is no storage key
+      return
+    }
+
+    function fn(event: StorageEvent) {
+      if (event.key === storageKey) {
+        setSelectedIndex(Number(event.newValue))
+      }
+    }
+
+    const index = Number(localStorage.getItem(storageKey))
+    setSelectedIndex(Number.isNaN(index) ? 0 : index)
+
+    window.addEventListener('storage', fn)
+    return () => {
+      window.removeEventListener('storage', fn)
+    }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps -- only on mount
+
+  const handleChange = useCallback((index: number) => {
+    if (storageKey) {
+      const newValue = String(index)
+      localStorage.setItem(storageKey, newValue)
+
+      // the storage event only get picked up (by the listener) if the localStorage was changed in
+      // another browser's tab/window (of the same app), but not within the context of the current tab.
+      window.dispatchEvent(
+        new StorageEvent('storage', { key: storageKey, newValue })
+      )
+      return
+    }
+    setSelectedIndex(index)
+    onChange?.(index)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps -- only on mount
+
+  return (
+    <HeadlessTab.Group
+      selectedIndex={selectedIndex}
+      defaultIndex={defaultIndex}
+      onChange={handleChange}
+    >
+      <div className="nextra-scrollbar nx-overflow-x-auto nx-overflow-y-hidden nx-overscroll-x-contain">
+        <HeadlessTab.List className="nx-mt-4 nx-flex nx-w-max nx-min-w-full nx-border-b nx-border-gray-200 nx-pb-px dark:nx-border-neutral-800">
+          {items.map((item, index) => {
+            const disabled = isTabObjectItem(item) && item.disabled
+            return (
+              <HeadlessTab
+                key={index}
+                disabled={disabled}
+                className={({ selected }) =>
+                  cn(
+                    'nx-mr-2 nx-rounded-t nx-p-2 nx-font-medium nx-leading-5 nx-transition-colors',
+                    '-nx-mb-0.5 nx-select-none nx-border-b-2',
+                    selected
+                      ? 'nx-border-primary-500 nx-text-primary-600'
+                      : 'nx-border-transparent nx-text-gray-600 hover:nx-border-gray-200 hover:nx-text-black dark:nx-text-gray-200 dark:hover:nx-border-neutral-800 dark:hover:nx-text-white',
+                    disabled &&
+                      'nx-pointer-events-none nx-text-gray-400 dark:nx-text-neutral-600'
+                  )
+                }
+              >
+                {isTabObjectItem(item) ? item.label : item}
+              </HeadlessTab>
+            )
+          })}
+        </HeadlessTab.List>
+      </div>
+      <HeadlessTab.Panels>{children}</HeadlessTab.Panels>
+    </HeadlessTab.Group>
+  )
+}
+
+export function Tab({
+  children,
+  ...props
+}: ComponentProps<typeof HeadlessTab.Panel>): ReactElement {
+  return (
+    <HeadlessTab.Panel {...props} className="nx-rounded nx-pt-6">
+      {children}
+    </HeadlessTab.Panel>
+  )
+}
+
+export const Tabs = Object.assign(_Tabs, { displayName: 'Tabs', Tab }) -->
+
+<script>
+  import { Tab } from '@headlessui/react';
+  import { onMount } from 'svelte';
+
+  export let items;
+  export let selectedIndex = 0;
+  export let defaultIndex = 0;
+  export let onChange;
+  export let storageKey;
+  
+  let localSelectedIndex = defaultIndex;
+
+  onMount(() => {
+    if (storageKey) {
+      function handleStorage(event) {
+        if (event.key === storageKey) {
+          localSelectedIndex = Number(event.newValue);
+        }
+      }
+
+      const index = Number(localStorage.getItem(storageKey));
+      localSelectedIndex = Number.isNaN(index) ? 0 : index;
+
+      window.addEventListener('storage', handleStorage);
+
+      return () => {
+        window.removeEventListener('storage', handleStorage);
+      };
+    }
+  });
+  
+  function handleChange(index) {
+    if (storageKey) {
+      const newValue = String(index);
+      localStorage.setItem(storageKey, newValue);
+      window.dispatchEvent(new StorageEvent('storage', { key: storageKey, newValue }));
+      return;
+    }
+
+    localSelectedIndex = index;
+    onChange?.(index);
+  }
+</script>
+
+<div class="nextra-scrollbar overflow-x-auto overflow-y-hidden overscroll-x-contain">
+  <div class="mt-4 flex w-max min-w-full border-b border-gray-200 pb-px dark:border-neutral-800">
+    {#each items as item, index (item)}
+      {#if typeof item === 'object'}
+        {#if !item.disabled}
+          <Tab
+            key={index}
+            disabled={item.disabled}
+            class={(selected) =>
+              `mr-2 rounded-t p-2 font-medium leading-5 transition-colors -mb-0.5 select-none border-b-2
+              ${selected ? 'border-primary-500 text-primary-600' : 'border-transparent text-gray-600 hover:border-gray-200 hover:text-black dark:text-gray-200 dark:hover:border-neutral-800 dark:hover:text-white'}
+              ${item.disabled && 'pointer-events-none text-gray-400 dark:text-neutral-600'}`
+            }
+            on:click={() => handleChange(index)}
+          >
+            {item.label}
+          </Tab>
+        {/if}
+      {:else}
+        <Tab
+          key={index}
+          class={(selected) =>
+            `mr-2 rounded-t p-2 font-medium leading-5 transition-colors -mb-0.5 select-none border-b-2
+            ${selected ? 'border-primary-500 text-primary-600' : 'border-transparent text-gray-600 hover:border-gray-200 hover:text-black dark:text-gray-200 dark:hover:border-neutral-800 dark:hover:text-white'}
+          `}
+          on:click={() => handleChange(index)}
+        >
+          {item}
+        </Tab>
+      {/if}
+    {/each}
+  </div>
+  {#if selectedIndex === undefined}
+    {#if selectedIndex === index}
+      {#if localSelectedIndex === index}
+        <div><slot/></div>
+      {/if}
+    {/if}
+  {#else}
+    <div><slot/></div>
+  {/if}
+</div>

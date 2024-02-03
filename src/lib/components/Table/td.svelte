@@ -1,0 +1,18 @@
+<!-- import type { ComponentProps } from 'react'
+
+export const Td = ({ className = '', ...props }: ComponentProps<'td'>) => (
+  <td
+    className={cn(
+      'nx-m-0 nx-border nx-border-gray-300 nx-px-4 nx-py-2 dark:nx-border-gray-600',
+      className
+    )}
+    {...props}
+  />
+) -->
+
+<script>
+  import clsx from "clsx"
+  export let className = ""
+</script>
+
+<td class={clsx("m-0 border border-gray-300 px-4 py-2 dark:border-gray-600", className)} {...$$restProps} />
