@@ -1,5 +1,4 @@
 // import readingTime from "reading-time";
-import { readingTime } from "reading-time-estimator"
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ params, url }) {
@@ -39,7 +38,7 @@ export async function load({ params, url }) {
       ogSquareImage,
       postTitle,
       seoMetaDescription,
-      timeToRead: readingTime(page), //Math.ceil(readingTime(page).minutes),
+      timeToRead: '', //readingTime(page, 10), //Math.ceil(readingTime(page).minutes),
       twitterImage,
       slug,
     },
