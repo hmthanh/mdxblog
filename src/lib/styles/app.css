@@ -1,4 +1,7 @@
 @import "./docs/hamburger.css";
+@import "./docs/typesetting-article.css";
+@import "./theme/variables.css";
+@import "./theme/code-block.css";
 
 @tailwind base;
 @tailwind components;
