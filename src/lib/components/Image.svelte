@@ -41,7 +41,5 @@
     height: auto;
   }
 
-  img:not([src]):not([srcset]) {
-    visibility: hidden;
-  }
+  
 </style>

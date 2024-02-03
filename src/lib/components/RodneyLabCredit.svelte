@@ -25,14 +25,5 @@
 </div>
 
 <style lang="scss">
-  .container {
-    display: "flex";
-    align-items: "center";
-    color: #032539;
-    font-family: Lato;
-  }
-
-  .rodneylab-text {
-    font-weight: 300;
-  }
+  
 </style>

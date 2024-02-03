@@ -1,13 +1,13 @@
-import { sveltekit } from "@sveltejs/kit/vite";
-import { defineConfig } from "vite";
-import { imagetools } from "vite-imagetools";
+import { sveltekit } from "@sveltejs/kit/vite"
+import { defineConfig } from "vite"
+import { imagetools } from "vite-imagetools"
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: "@import 'src/lib/styles/variables.scss';",
+        //   additionalData: "@import 'src/lib/styles/variables.scss';",
       },
     },
   },
@@ -23,4 +23,4 @@ export default defineConfig({
     port: 4173,
     strictPort: false,
   },
-});
+})

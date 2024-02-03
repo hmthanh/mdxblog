@@ -81,8 +81,6 @@
 </Card>
 <BlogRoll {posts} />
 
-<style lang="scss">
-  header > h2 {
-    font-size: $font-size-3;
-  }
+<style lang="css">
+  
 </style>
