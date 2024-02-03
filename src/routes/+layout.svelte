@@ -15,6 +15,7 @@
 
   import "$lib/styles/normalise.css";
   import "$lib/styles/index.scss";
+  import "$lib/styles/app.css";
 
   import Footer from "$lib/components/Footer.svelte";
   import Header from "$lib/components/Header.svelte";
