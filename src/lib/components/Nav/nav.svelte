@@ -1,7 +1,7 @@
 <script>
   import { slide } from "svelte/transition"
   // import { ArrowRightIcon, MenuIcon } from "svelte-icons"
-  import ArrowRightIcon from "$lib/icons"
+  import {ArrowRightIcon, MenuIcon} from "$lib/icons"
 
   export let items
   export let directories
