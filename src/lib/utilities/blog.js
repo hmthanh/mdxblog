@@ -1,5 +1,5 @@
-import { compile } from "mdsvex";
-export const BLOG_PATH = "src/content/blog";
+import { compile } from "mdsvex"
+export const BLOG_PATH = "src/content/blog"
 
 /**
  * Returns array of post slugs
@@ -7,15 +7,15 @@ export const BLOG_PATH = "src/content/blog";
  */
 export async function getSlugs() {
   try {
-    const posts = await import.meta.glob("../../content/blog/**/index.md");
+    const posts = await import.meta.glob("../../content/blog/**/index.md")
     const slugs = Object.keys(posts).map((element) => {
-      const lastIndex = element.lastIndexOf("/index.md");
-      const firstIndex = element.lastIndexOf("/", lastIndex - 1) + 1;
-      return element.slice(firstIndex, lastIndex);
-    });
-    return slugs;
+      const lastIndex = element.lastIndexOf("/index.md")
+      const firstIndex = element.lastIndexOf("/", lastIndex - 1) + 1
+      return element.slice(firstIndex, lastIndex)
+    })
+    return slugs
   } catch (error) {
-    console.error(`Error finding post slugs in getSlugs: ${error}`);
+    console.error(`Error finding post slugs in getSlugs: ${error}`)
   }
 }
 
@@ -25,20 +25,20 @@ export async function getSlugs() {
  */
 export async function getPostsContent() {
   try {
-    const postFiles = await import.meta.glob("../../content/blog/**/index.md");
+    const postFiles = await import.meta.glob("../../content/blog/**/index.md")
     const postPromises = Object.keys(postFiles).map(async (element) => {
-      await postFiles[element]();
-      const lastIndex = element.lastIndexOf("/index.md");
-      const firstIndex = element.lastIndexOf("/", lastIndex - 1) + 1;
-      const slug = element.slice(firstIndex, lastIndex);
-      const content = (await import(`${element}?raw`)).default;
+      await postFiles[element]()
+      const lastIndex = element.lastIndexOf("/index.md")
+      const firstIndex = element.lastIndexOf("/", lastIndex - 1) + 1
+      const slug = element.slice(firstIndex, lastIndex)
+      const content = (await import(`${element}?raw`)).default
 
-      return { slug, content };
-    });
+      return { slug, content }
+    })
 
-    return Promise.all(postPromises);
+    return Promise.all(postPromises)
   } catch (error) {
-    console.error(`Error importing blog posts in getPostsContent: ${error}`);
+    console.error(`Error importing blog posts in getPostsContent: ${error}`)
   }
 }
 
@@ -50,26 +50,24 @@ export async function getPostsContent() {
  */
 export const getPosts = async (postsContent, body = false) => {
   const postPromises = postsContent.map(async (element) => {
-    const { content, slug } = element;
-    const transformedContent = await compile(content);
+    const { content, slug } = element
+    const transformedContent = await compile(content)
     const { datePublished, lastUpdated, postTitle, seoMetaDescription } =
       /** @type {{datePublished: string; lastUpdated: string; postTitle: string; seoMetaDescription: string;}} */ (
         transformedContent.data.fm
-      );
+      )
     let resultElement = {
       datePublished,
       lastUpdated,
       postTitle,
       seoMetaDescription,
       slug,
-    };
-    if (body) {
-      resultElement = { ...resultElement, body: transformedContent.code };
     }
-    return resultElement;
-  });
-  const result = await Promise.all(postPromises);
-  return result.sort(
-    (a, b) => Date.parse(b.datePublished) - Date.parse(a.datePublished),
-  );
-};
+    if (body) {
+      resultElement = { ...resultElement, body: transformedContent.code }
+    }
+    return resultElement
+  })
+  const result = await Promise.all(postPromises)
+  return result.sort((a, b) => Date.parse(b.datePublished) - Date.parse(a.datePublished))
+}

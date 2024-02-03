@@ -12,65 +12,6 @@
   const { facebookPage, linkedinProfile, githubPage, tiktokUsername, twitterUsername } = website
 </script>
 
-<!-- <footer class="footer-container">
-  <div>
-    Created by <a
-      aria-label="Open the Mdx Blog site"
-      href="https://rodneylab.com/"
-      target="_blank"
-      rel="noopener noreferrer">Mdx Blog</a
-    >. Copyright {COPYRIGHT_ENTITY} 2021 – 2024.
-  </div>
-  <nav class="footer-icons" aria-label="Links to external sites">
-    <ul>
-      <li class="hover-jump">
-        <ExternalLink
-          ariaLabel="Go to the Mdx Blog Tik Tok Page"
-          href={`https://www.tiktok.com/${tiktokUsername}`}
-          >
-          <TiktokIcon />
-          </ExternalLink
-        >
-      </li>
-      <li class="hover-jump">
-        <ExternalLink
-          ariaLabel="Go to the Mdx Blog Facebook Page"
-          href={facebookPage}>
-          <FacebookIcon />
-          </ExternalLink
-        >
-      </li>
-      <li class="hover-jump">
-        <ExternalLink
-          ariaLabel="Go to the Mdx Blog Twitter Page"
-          href={`https://twitter.com/intent/user?screen_name=${twitterUsername}`}
-          >
-          <TwitterIcon />
-          </ExternalLink
-        >
-      </li>
-      <li class="hover-jump">
-        <ExternalLink
-          ariaLabel="Go to the Mdx Blog Linked In Page"
-          href={`https://uk.linkedin.com/in/${linkedinProfile}`}
-          >
-          <LinkedinIcon />
-          </ExternalLink
-        >
-      </li>
-      <li class="hover-jump">
-        <ExternalLink
-          ariaLabel="Go to the Mdx Blog Git Hub In Page"
-          href={`https://github.com/${githubPage}`}>
-          <GitHubIcon />
-          </ExternalLink
-        >
-      </li>
-    </ul>
-  </nav>
-  <RodneyLabCredit />
-</footer> -->
-
 <footer class="bg-gray-100 pb-[env(safe-area-inset-bottom)] dark:bg-neutral-900 print:bg-transparent">
   <div class="mx-auto flex max-w-[90rem] gap-2 py-2 px-4 hidden">
     <button
@@ -122,7 +63,8 @@
         </a>
       </div>
       <p class="mt-6 text-xs">
-        © <!-- -->2024<!-- --> The Nextra Project.</p>
+        © <!-- -->2024<!-- --> The Nextra Project.
+      </p>
     </div>
   </div>
 </footer>

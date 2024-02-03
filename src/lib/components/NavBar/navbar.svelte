@@ -1,10 +1,11 @@
 <script>
   import { slide } from "svelte/transition"
   // import { ArrowRightIcon, MenuIcon } from "svelte-icons"
-  import {ArrowRightIcon, MenuIcon} from "$lib/icons"
+  import { ArrowRightIcon, MenuIcon } from "$lib/icons"
 
   export let items
-  export let directories
+  export let config
+  // export let directories
 
   let menuOpen = false
 
@@ -16,7 +17,7 @@
 <nav>
   {#if config.logoLink}
     <a href="/" class="mr-auto">
-      <Logo />
+      <!-- <Logo /> -->
     </a>
   {/if}
 
@@ -28,7 +29,7 @@
           <ArrowRightIcon class="ml-1 h-4 w-4 rounded-sm p-0.5 transition-transform rotate-90" />
         </button>
 
-        {#if menuOpen === item}
+        <!-- {#if menuOpen === item}
           <div
             transition:slide
             class="absolute right-0 z-10 mt-1 w-full overflow-auto rounded-md bg-white py-1 text-sm shadow-lg"
@@ -41,8 +42,8 @@
                 >{subItem.title || subItem.key}</a
               >
             {/each}
-          </div>
-        {/if}
+          </div> 
+        {/if}-->
       </div>
     {:else}
       <a
@@ -54,17 +55,17 @@
     {/if}
   {/each}
 
-  <SearchBox bind:directories />
+  <!-- <SearchBox bind:directories /> -->
 
   {#if config.projectLink}
     <a href={config.projectLink} target="_blank" rel="noreferrer noopener" class="p-2 text-current">
-      <ProjectIcon />
+      <!-- <ProjectIcon /> -->
     </a>
   {/if}
 
   {#if config.chatLink}
     <a href={config.chatLink} target="_blank" rel="noreferrer noopener" class="p-2 text-current">
-      <ChatIcon />
+      <!-- <ChatIcon /> -->
     </a>
   {/if}
 
