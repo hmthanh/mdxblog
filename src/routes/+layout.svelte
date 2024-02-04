@@ -1,4 +1,5 @@
 <script>
+	
   // import { ThemeProvider } from '$lib/config/store/theme';
   // Lora - supported variants:
   // weights: [400, 500, 600, 700]
@@ -21,6 +22,8 @@
   import Header from "$lib/components/Header.svelte"
   import PWA from "$lib/components/PWA.svelte"
   import Anchor from "svelte-docs/components/anchor.svelte"
+  
+  import Navbar from "svelte-docs/components/navbar.svelte"
   // import ThemeProvider from "$lib/config/theme"
   // import SvelteTheme from "$lib/config/themeStore/SvelteTheme.svelte"
 </script>
@@ -29,6 +32,7 @@
 <!-- <SvelteTheme /> -->
 <div class="container">
   <Header />
+  <Navbar/>
   <!-- <Anchor >sdfsdffsdf</Anchor> -->
   <main class="main-container">
     <slot />
