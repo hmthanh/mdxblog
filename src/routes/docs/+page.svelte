@@ -1,6 +1,7 @@
 <script>
+	import SvelteSeo from 'scope-seo';
   import Card from "$lib/components/Card.svelte"
-  import EmailIcon from "$lib/core/Icons/Email.svelte"
+  import EmailIcon from "scope-core/Icons/Email.svelte"
   import ExternalLink from "$lib/components/ExternalLink.svelte"
   import website from "$lib/config/website"
   const { contactEmail, facebookPageName, telegramUsername, twitterUserId, twitterUsername, wireUsername } = website
@@ -28,7 +29,12 @@
   }
 </script>
 
-<SEO {...seoProps} />
+<!-- <SEO {...seoProps} /> -->
+
+<SvelteSeo
+  title="Simple page title"
+  description="Simple description about a page"
+/>
 <h1>Contact me</h1>
 <p>I would love to hear from you. Please get in touch!</p>
 

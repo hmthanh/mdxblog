@@ -1,5 +1,15 @@
 <script>
-	
+	import SvelteSeo from 'scope-seo';
+  import "$lib/styles/normalise.css"
+  import "$lib/styles/app.css"
+
+  import Footer from "$lib/components/Footer.svelte"
+  import Header from "$lib/components/Header.svelte"
+  import PWA from "$lib/components/PWA.svelte"
+  import Anchor from "scope-docs/components/anchor.svelte"
+  
+  import Navbar from "scope-docs/components/navbar.svelte"
+
   // import { ThemeProvider } from '$lib/config/store/theme';
   // Lora - supported variants:
   // weights: [400, 500, 600, 700]
@@ -14,22 +24,12 @@
   // styles: italic, normal
   // import "@fontsource/source-sans-pro/400.css";
   // import "@fontsource/source-sans-pro/400-italic.css";
-
-  import "$lib/styles/normalise.css"
-  import "$lib/styles/app.css"
-
-  import Footer from "$lib/components/Footer.svelte"
-  import Header from "$lib/components/Header.svelte"
-  import PWA from "$lib/components/PWA.svelte"
-  import Anchor from "svelte-docs/components/anchor.svelte"
-  
-  import Navbar from "svelte-docs/components/navbar.svelte"
-  import "svelte-seo"
   // import ThemeProvider from "$lib/config/theme"
   // import SvelteTheme from "$lib/config/themeStore/SvelteTheme.svelte"
 </script>
 
 <PWA />
+
 <!-- <SvelteTheme /> -->
 <div class="container">
   <Header />

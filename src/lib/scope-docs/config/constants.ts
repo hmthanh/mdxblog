@@ -1,10 +1,11 @@
 /* eslint sort-keys: error */
 import type { NextSeoProps } from 'next-seo'
-import { useRouter } from 'next/router'
-import { DiscordIcon, GitHubIcon } from 'nextra/icons'
+// import { useRouter } from 'next/router'
+// import { DiscordIcon, GitHubIcon } from 'nextra/icons'
+
 import type { Item } from 'nextra/normalize-pages'
-import type { FC, ReactNode } from 'react'
-import { isValidElement } from 'react'
+// import type { FC, ReactNode } from 'react'
+// import { isValidElement } from 'react'
 import { z } from 'zod'
 import { Anchor, Flexsearch, Footer, Navbar, TOC } from './components'
 import { MatchSorterSearch } from './components/match-sorter-search'

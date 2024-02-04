@@ -11,9 +11,9 @@ const config = {
     alias: {
       $lib: "src/lib",
       $config: "src/lib/config",
-      $core: "src/lib/core",
-      "svelte-docs": "src/lib/svelte-docs",
-      "svelte-seo": "src/lib/svelte-seo",
+      "scope-core": "src/lib/scope-core",
+      "scope-docs": "src/lib/scope-docs",
+      "scope-seo": "src/lib/scope-seo",
       $components: "src/lib/components",
     },
   },

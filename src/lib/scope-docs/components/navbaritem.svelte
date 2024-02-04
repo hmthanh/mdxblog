@@ -1,7 +1,7 @@
 <script>
   import cn from "clsx"
-  import Menu from "svelte-docs/components/menu/menu.svelte"
-  import MenuButton from "svelte-docs/components/menu/menubutton.svelte"
+  import Menu from "scope-docs/components/menu/menu.svelte"
+  import MenuButton from "scope-docs/components/menu/menubutton.svelte"
 
   // export let menu
   let _class
