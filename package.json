@@ -69,6 +69,7 @@
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "clsx": "^2.1.0",
     "reading-time-estimator": "^1.9.4",
+    "schema-dts": "^1.1.2",
     "slash": "^5.1.0",
     "title": "^3.5.3",
     "zod": "^3.22.4"

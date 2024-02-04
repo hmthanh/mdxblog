@@ -13,6 +13,7 @@ const config = {
       $config: "src/lib/config",
       $core: "src/lib/core",
       "svelte-docs": "src/lib/svelte-docs",
+      "svelte-seo": "src/lib/svelte-seo",
       $components: "src/lib/components",
     },
   },

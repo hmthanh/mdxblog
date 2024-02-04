@@ -24,6 +24,7 @@
   import Anchor from "svelte-docs/components/anchor.svelte"
   
   import Navbar from "svelte-docs/components/navbar.svelte"
+  import "svelte-seo"
   // import ThemeProvider from "$lib/config/theme"
   // import SvelteTheme from "$lib/config/themeStore/SvelteTheme.svelte"
 </script>
@@ -32,7 +33,7 @@
 <!-- <SvelteTheme /> -->
 <div class="container">
   <Header />
-  <Navbar/>
+  <!-- <Navbar/> -->
   <!-- <Anchor >sdfsdffsdf</Anchor> -->
   <main class="main-container">
     <slot />
