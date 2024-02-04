@@ -52,7 +52,7 @@
 <p>I would love to hear from you. Please get in touch!</p> -->
 
 
-<!-- <Listbox bind:value={selectedPerson}>
+<Listbox bind:value={selectedPerson}>
   <ListboxButton>{selectedPerson.name}</ListboxButton>
   <ListboxOptions>
     {#each people as person (person.id)}
@@ -70,7 +70,7 @@
     {/each}
   </ListboxOptions>
 </Listbox>
- -->
+
 
 
  <!-- <Listbox value={selected} onChange={onChange}>

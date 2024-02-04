@@ -53,8 +53,6 @@
     useTransitionContext,
   } from "scope-ui/components/transitions/common.svelte"
   import { useId } from "scope-ui/hooks/use-id"
-  import { forwardEventsBuilder } from "scope-ui/internal/forwardEventsBuilder"
-  import { get_current_component } from "svelte/internal"
   import type { SupportedAs } from "scope-ui/internal/elements"
   import type { HTMLActionArray } from "scope-ui/hooks/use-actions"
   import Render, { RenderStrategy } from "scope-ui/utils/Render.svelte"
@@ -81,13 +79,6 @@
     outrostart: null
     outroend: null
   }>()
-
-  const forwardEvents = forwardEventsBuilder(get_current_component(), [
-    "introstart",
-    "introend",
-    "outrostart",
-    "outroend",
-  ])
 
   /***** Component *****/
   let container: HTMLElement | null = null
@@ -214,7 +205,7 @@
 <Render
   {...$$restProps}
   {as}
-  use={[...use, forwardEvents]}
+  use={[...use]}
   slotProps={{}}
   name={"TransitionChild"}
   bind:el={container}
