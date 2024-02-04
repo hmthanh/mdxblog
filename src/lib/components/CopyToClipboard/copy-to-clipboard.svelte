@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte"
-  import { CopyIcon, CheckIcon } from "$lib/icons"
+  import { CopyIcon, CheckIcon } from "scope-docs"
 
   export let getValue
 

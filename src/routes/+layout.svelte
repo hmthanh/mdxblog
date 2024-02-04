@@ -21,7 +21,7 @@
   import ListboxLabel from "scope-ui/components/listbox/ListboxLabel.svelte"
   import ListboxOption from "scope-ui/components/listbox/ListboxOption.svelte"
   import ListboxOptions from "scope-ui/components/listbox/ListboxOptions.svelte"
-  import { CheckIcon } from "$lib/icons"
+  import { CheckIcon } from "scope-docs"
 
   
 </script>
@@ -31,7 +31,6 @@
 <div class="container">
   <!-- <Header /> -->
   
-  <Render as="div">hello</Render>
   <!-- <Navbar/> -->
   <!-- <Anchor >sdfsdffsdf</Anchor> -->
   <main class="main-container">

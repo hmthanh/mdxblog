@@ -5,10 +5,10 @@
   // import type { ReactElement } from 'react'
   // import { z } from 'zod'
   // import { useConfig } from '../contexts'
-  // import { Select } from './select'
-  import {z} from "zod";
+  import Select from "./select.svelte"
+  import { z } from "zod"
   import { browser } from "$app/environment"
-  import { SunIcon, MoonIcon } from "scope-core/icons"
+  import { SunIcon, MoonIcon } from "../icons"
   let _class
   export { _class as class }
 
@@ -25,11 +25,11 @@
 
   type ThemeOptions = z.infer<typeof themeOptionsSchema>
 
-  const options = getThemeOptions() // Fetch options
+  // const options = getThemeOptions() // Fetch options
   let theme = "light"
 
   //   const { setTheme, resolvedTheme, theme = '' } = useTheme()
-  const config = useConfig().themeSwitch
+  // const config = useConfig().themeSwitch
 
   function setTheme(newTheme: ThemeOptions["light" | "dark" | "system"]) {
     theme = newTheme
@@ -39,10 +39,11 @@
   $: icon = theme === "dark" ? MoonIcon : SunIcon
 
   //   const IconToUse = mounted && resolvedTheme === 'dark' ? MoonIcon : SunIcon
-  //   const options: ThemeOptions =
-  //     typeof config.useOptions === 'function'
-  //       ? config.useOptions()
-  //       : config.useOptions
+  // const options: ThemeOptions =
+  //   typeof config.useOptions === 'function'
+  //     ? config.useOptions()
+  //     : config.useOptions
+  const options = "light"
 </script>
 
 <!-- {#if browser}
@@ -55,27 +56,31 @@
     options={{ light: options.light, dark: options.dark }}
   />
 {/if} -->
+<!-- options={[
+  { key: "light", name: options.light },
+  { key: "dark", name: options.dark },
+  { key: "system", name: options.system },
+]} -->
 
-<!-- <Select
-      className={className}
-      title="Change theme"
-      options={[
-        { key: 'light', name: options.light },
-        { key: 'dark', name: options.dark },
-        { key: 'system', name: options.system }
-      ]}
-      onChange={option => {
-        setTheme(option.key)
-      }}
-      selected={{
-        key: theme,
-        name: (
-          <div className="nx-flex nx-items-center nx-gap-2 nx-capitalize">
-            <IconToUse />
-            <span className={lite ? 'md:nx-hidden' : ''}>
-              {mounted ? options[theme as keyof typeof options] : options.light}
-            </span>
-          </div>
-        )
-      }}
-    /> -->
+<Select
+  class={_class}
+  title="Change theme"
+  options={[
+    { key: "light", name: "light" },
+    { key: "dark", name: "dark" },
+    { key: "system", name: "system" },
+  ]}
+  onChange={(option) => {
+    setTheme(option.key)
+  }}
+  selected={{
+    key: theme,
+    name: "",
+    // <div className="flex items-center gap-2 capitalize">
+    //   <IconToUse />
+    //   <span className={lite ? 'md:hidden' : ''}>
+    //     {mounted ? options[theme as keyof typeof options] : options.light}
+    //   </span>
+    // </div>
+  }}
+/>

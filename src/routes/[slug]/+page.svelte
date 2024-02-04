@@ -2,7 +2,7 @@
   import { browser } from "$app/environment"
   import BlogPost from "$lib/components/BlogPost.svelte"
   import lazyload from "vanilla-lazyload"
-  import { ArrowRightIcon } from "$lib/icons"
+  import { ArrowRightIcon } from "scope-docs"
 
   /** @type {import('./$types').PageData} */
   export let data

@@ -1,17 +1,15 @@
 <script>
   import SvelteSEO from "scope-seo"
   import Card from "$lib/components/Card.svelte"
-  import EmailIcon from "scope-core/Icons/Email.svelte"
+  import EmailIcon from "$lib/scope-core/icons/Email.svelte"
   import ExternalLink from "$lib/components/ExternalLink.svelte"
   import website from "$lib/config/website"
   const { contactEmail, facebookPageName, telegramUsername, twitterUserId, twitterUsername, wireUsername } = website
   import SEO from "$lib/components/SEO/index.svelte"
-  import { CheckIcon } from "$lib/icons"
-  import Listbox from "scope-ui/components/listbox/Listbox.svelte"
-  import ListboxButton from "scope-ui/components/listbox/ListboxButton.svelte"
-  import ListboxLabel from "scope-ui/components/listbox/ListboxLabel.svelte"
-  import ListboxOption from "scope-ui/components/listbox/ListboxOption.svelte"
-  import ListboxOptions from "scope-ui/components/listbox/ListboxOptions.svelte"
+
+  import cn from "clsx"
+  import { Transition } from "scope-ui/components/transitions"
+  import { Select } from "scope-docs"
 
   let title = "Contact"
   let metadescription = "Get in touch with Rodneylab, the developer of Climate SvelteKit Starter."
@@ -33,47 +31,16 @@
     datePublished: "2021-07-07T14:19:33.000+0100",
     lastUpdated: "2021-07-07T14:19:33.000+0100",
   }
-
-  const people = [
-    { id: 1, name: "Durward Reynolds", unavailable: false },
-    { id: 2, name: "Kenton Towne", unavailable: false },
-    { id: 3, name: "Therese Wunsch", unavailable: false },
-    { id: 4, name: "Benedict Kessler", unavailable: true },
-    { id: 5, name: "Katelyn Rohan", unavailable: false },
-  ]
-
-  let selectedPerson = people[0]
 </script>
 
 <!-- <SEO {...seoProps} /> -->
+<Select />
 
 <!-- <SvelteSEO title="Simple page title" description="Simple description about a page" /> -->
 <!-- <h1>Contact me</h1>
 <p>I would love to hear from you. Please get in touch!</p> -->
 
-
-<Listbox bind:value={selectedPerson}>
-  <ListboxButton>{selectedPerson.name}</ListboxButton>
-  <ListboxOptions>
-    {#each people as person (person.id)}
-      <ListboxOption
-        value={person}
-        disabled={person.unavailable}
-        class={({ active }) => (active ? "active" : "")}
-        let:selected
-      >
-        {#if selected}
-          <CheckIcon />
-        {/if}
-        {person.name}
-      </ListboxOption>
-    {/each}
-  </ListboxOptions>
-</Listbox>
-
-
-
- <!-- <Listbox value={selected} onChange={onChange}>
+<!-- <Listbox value={selected} onChange={onChange}>
   {({ open }) => (
     <Listbox.Button
       ref={trigger}
