@@ -11,10 +11,11 @@ const config = {
     alias: {
       $lib: "src/lib",
       $config: "src/lib/config",
+      $components: "src/lib/components",
       "scope-core": "src/lib/scope-core",
       "scope-docs": "src/lib/scope-docs",
       "scope-seo": "src/lib/scope-seo",
-      $components: "src/lib/components",
+      "scope-ui": "src/lib/scope-ui",
     },
   },
 }
