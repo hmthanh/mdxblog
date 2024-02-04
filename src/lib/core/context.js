@@ -1,5 +1,5 @@
 import { NEXTRA_INTERNAL } from "./constants"
-import { normalizeMeta } from "./utils"
+import { normalizeMeta } from "../app./core/utils"
 
 function getContext(name) {
   const __nextra_internal__ = globalThis[NEXTRA_INTERNAL]

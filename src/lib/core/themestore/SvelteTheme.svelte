@@ -134,6 +134,6 @@
   }
 </script>
 
-<ThemeScript {forcedTheme} {storageKey} {attribute} {enableSystem} {defaultTheme} {value} {attrs} />
+<!-- <ThemeScript {forcedTheme} {storageKey} {attribute} {enableSystem} {defaultTheme} {value} {attrs} /> -->
 
 <svelte:window use:onWindow />

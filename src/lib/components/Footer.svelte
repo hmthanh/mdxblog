@@ -1,19 +1,12 @@
 <script>
-  import ExternalLink from "$lib/components/ExternalLink.svelte"
-  import FacebookIcon from "$lib/core/Icons/Facebook.svelte"
-  import GitHubIcon from "$lib/core/Icons/GitHub.svelte"
-  import LinkedinIcon from "$lib/core/Icons/LinkedIn.svelte"
-  import TiktokIcon from "$lib/core/Icons/Tiktok.svelte"
-  import TwitterIcon from "$lib/core/Icons/Twitter.svelte"
-  import RodneyLabCredit from "$lib/components/RodneyLabCredit.svelte"
+  import cn from "clsx"
   import website from "$lib/config/website"
-  import { COPYRIGHT_ENTITY } from "$lib/constants/entities"
 
   const { facebookPage, linkedinProfile, githubPage, tiktokUsername, twitterUsername } = website
 </script>
 
 <footer class="bg-gray-100 pb-[env(safe-area-inset-bottom)] dark:bg-neutral-900 print:bg-transparent">
-  <div class="mx-auto flex max-w-[90rem] gap-2 py-2 px-4 hidden">
+  <div class="mx-auto max-w-[90rem] gap-2 py-2 px-4 flex hidden">
     <button
       title="Change theme"
       class="h-7 rounded-md px-2 text-left text-xs font-medium text-gray-600 transition-colors dark:text-gray-400 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-primary-100/5 dark:hover:text-gray-50"

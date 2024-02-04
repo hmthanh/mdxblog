@@ -9,5 +9,5 @@ const themeStore = writable({
   resolvedTheme: undefined,
   systemTheme: undefined,
 })
-export default themeStore
 
+export default themeStore

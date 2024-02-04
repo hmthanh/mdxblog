@@ -9,7 +9,11 @@ const config = {
   kit: {
     adapter: adapter({ precompress: true }),
     alias: {
-      $lib: "./src/lib",
+      $lib: "src/lib",
+      $config: "src/lib/config",
+      $core: "src/lib/core",
+      "svelte-docs": "src/lib/svelte-docs",
+      $components: "src/lib/components",
     },
   },
 }

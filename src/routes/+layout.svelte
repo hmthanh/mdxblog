@@ -1,4 +1,5 @@
 <script>
+  // import { ThemeProvider } from '$lib/config/store/theme';
   // Lora - supported variants:
   // weights: [400, 500, 600, 700]
   // styles: italic, normal
@@ -19,19 +20,19 @@
   import Footer from "$lib/components/Footer.svelte"
   import Header from "$lib/components/Header.svelte"
   import PWA from "$lib/components/PWA.svelte"
-  import ThemeProvider from "$lib/config/theme"
-  import SvelteTheme from "$lib/config/themeStore/SvelteTheme.svelte"
+  import Anchor from "svelte-docs/components/anchor.svelte"
+  // import ThemeProvider from "$lib/config/theme"
+  // import SvelteTheme from "$lib/config/themeStore/SvelteTheme.svelte"
 </script>
 
 <PWA />
-<SvelteTheme />
+<!-- <SvelteTheme /> -->
 <div class="container">
   <Header />
-  <!-- <ThemeProvider> -->
+  <!-- <Anchor >sdfsdffsdf</Anchor> -->
   <main class="main-container">
     <slot />
   </main>
-  <!-- </ThemeProvider> -->
   <Footer />
 </div>
 
