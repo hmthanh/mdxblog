@@ -9,6 +9,7 @@
   import Anchor from "scope-docs/components/anchor.svelte"
   
   import Navbar from "scope-docs/components/navbar.svelte"
+  import "scope-core/normalize-pages"
 
   // import { ThemeProvider } from '$lib/config/store/theme';
   // Lora - supported variants:
