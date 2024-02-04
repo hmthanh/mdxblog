@@ -1,56 +1,56 @@
 <script>
-    /** @type {import("./types").SvelteSeo['title']}*/
+    /** @type {import("./types").SvelteSEO['title']}*/
     export let title = undefined;
   
-    /** @type {import("./types").SvelteSeo["description"]}*/
+    /** @type {import("./types").SvelteSEO["description"]}*/
     export let description = undefined;
   
-    /**@type {import("./types").SvelteSeo["keywords"]}*/
+    /**@type {import("./types").SvelteSEO["keywords"]}*/
     export let keywords = undefined;
   
-    /** @type {import("./types").SvelteSeo["base"]}*/
+    /** @type {import("./types").SvelteSEO["base"]}*/
     export let base = undefined;
   
-    /**@type {import("./types").SvelteSeo["applicationName"]}*/
+    /**@type {import("./types").SvelteSEO["applicationName"]}*/
     export let applicationName = undefined;
   
-    /**@type {import("./types").SvelteSeo["themeColor"]}*/
+    /**@type {import("./types").SvelteSEO["themeColor"]}*/
     export let themeColor = undefined;
   
-    /**@type {import("./types").SvelteSeo["nofollow"]}*/
+    /**@type {import("./types").SvelteSEO["nofollow"]}*/
     export let nofollow = false;
   
-    /**@type {import("./types").SvelteSeo["noindex"]}*/
+    /**@type {import("./types").SvelteSEO["noindex"]}*/
     export let noindex = false;
   
-    /**@type {import("./types").SvelteSeo["nositelinkssearchbox"]}*/
+    /**@type {import("./types").SvelteSEO["nositelinkssearchbox"]}*/
     export let nositelinkssearchbox = false;
   
-    /** @type {import("./types").SvelteSeo["notranslate"]}*/
+    /** @type {import("./types").SvelteSEO["notranslate"]}*/
     export let notranslate = false;
   
-    /** @type {import("./types").SvelteSeo["canonical"]}*/
+    /** @type {import("./types").SvelteSEO["canonical"]}*/
     export let canonical = undefined;
   
-    /** @type {import("./types").SvelteSeo["amp"]}*/
+    /** @type {import("./types").SvelteSEO["amp"]}*/
     export let amp = undefined;
   
-    /** @type {import("./types").SvelteSeo["manifest"]}*/
+    /** @type {import("./types").SvelteSEO["manifest"]}*/
     export let manifest = undefined;
   
-    /**@type {import("./types").SvelteSeo["languageAlternates"]}*/
+    /**@type {import("./types").SvelteSEO["languageAlternates"]}*/
     export let languageAlternates = undefined;
   
-    /**@type {import("./types").SvelteSeo['twitter']}*/
+    /**@type {import("./types").SvelteSEO['twitter']}*/
     export let twitter = undefined;
   
-    /**@type {import('./types').SvelteSeo['openGraph']}*/
+    /**@type {import('./types').SvelteSEO['openGraph']}*/
     export let openGraph = undefined;
   
-    /**@type {import("./types").SvelteSeo['facebook']}*/
+    /**@type {import("./types").SvelteSEO['facebook']}*/
     export let facebook = undefined;
   
-    /**@type {import("./types").SvelteSeo['jsonLd']}*/
+    /**@type {import("./types").SvelteSEO['jsonLd']}*/
     export let jsonLd = undefined;
   
     import OpenGraphComponent from "./open-graph.svelte";

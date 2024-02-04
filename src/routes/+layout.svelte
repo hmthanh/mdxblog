@@ -1,5 +1,5 @@
 <script>
-	import SvelteSeo from 'scope-seo';
+	import SvelteSEO from 'scope-seo';
   import "$lib/styles/normalise.css"
   import "$lib/styles/app.css"
 
@@ -10,6 +10,7 @@
   
   import Navbar from "scope-docs/components/navbar.svelte"
   import "scope-core/normalize-pages"
+  // import "scope-docs/components/theme-switch.svelte";
 
   // import { ThemeProvider } from '$lib/config/store/theme';
   // Lora - supported variants:

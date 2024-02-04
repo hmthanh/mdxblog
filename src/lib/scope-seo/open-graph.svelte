@@ -1,5 +1,5 @@
 <script>
-    /**@type {import("./types").SvelteSeo['openGraph']}*/
+    /**@type {import("./types").SvelteSEO['openGraph']}*/
     export let openGraph = undefined;
   </script>
   

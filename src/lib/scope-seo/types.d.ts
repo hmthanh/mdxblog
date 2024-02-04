@@ -1,6 +1,6 @@
 import { Thing, WithContext } from "schema-dts";
 
-export interface SvelteSeo {
+export interface SvelteSEO {
   title?: string;
   description?: string;
   base?: string;

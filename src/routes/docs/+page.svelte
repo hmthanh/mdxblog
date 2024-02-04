@@ -1,5 +1,5 @@
 <script>
-	import SvelteSeo from 'scope-seo';
+	import SvelteSEO from 'scope-seo';
   import Card from "$lib/components/Card.svelte"
   import EmailIcon from "scope-core/Icons/Email.svelte"
   import ExternalLink from "$lib/components/ExternalLink.svelte"
@@ -31,7 +31,7 @@
 
 <!-- <SEO {...seoProps} /> -->
 
-<SvelteSeo
+<SvelteSEO
   title="Simple page title"
   description="Simple description about a page"
 />
