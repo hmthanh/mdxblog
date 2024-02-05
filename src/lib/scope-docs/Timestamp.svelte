@@ -1,16 +1,26 @@
 <script lang="ts">
-  export let date
+  // export let date
+  export let timestamp = new Date()
+  export let locale = ""
 </script>
 
-{#if date}
+{#if timestamp}
   <div
-    class="nx-mt-12 nx-mb-8 nx-block nx-text-xs nx-text-gray-500 ltr:nx-text-right rtl:nx-text-left dark:nx-text-gray-400"
+    class="mt-12 mb-8 block text-xs text-gray-500 ltr:text-right rtl:text-left dark:text-gray-400"
   >
-    {date}
+    Last updated on{" "}
+    <time dateTime={timestamp.toISOString()}>
+      <!-- {timestamp.toLocaleDateString(locale, {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      })} -->
+      October 25, 2023
+    </time>
     <!-- {renderComponent(config.gitTimestamp, { timestamp: date })} -->
   </div>
 {:else}
-  <div class="nx-mt-16" />
+  <div class="mt-16" />
 {/if}
 
 <!-- const gitTimestampEl = // Because a user's time zone may be different from the server page mounted && date ? ( ) : ( ) -->

@@ -1,4 +1,7 @@
-<script></script>
+<script lang="ts">
+  export let flatDirectories
+  export let currentIndex
+</script>
 
 <div
   class="mb-8 flex items-center border-t pt-8 dark:border-neutral-800 contrast-more:border-neutral-400 dark:contrast-more:border-neutral-400 print:hidden"

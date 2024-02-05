@@ -5,11 +5,17 @@
   import Sidebar from "./components/sidebar.svelte"
   import Body from "./Body.svelte"
   import Footer from "./components/footer.svelte"
+  import Toc from "./components/toc.svelte"
   export let filePath
   export let pageMap
   export let frontMatter
   export let headings
   export let timestamp
+
+  const classes = {
+    toc: cn("nextra-toc order-last hidden w-64 shrink-0 xl:block print:hidden"),
+    main: cn("w-full break-words"),
+  }
 
   // const config = useConfig()
   // const { locale = DEFAULT_LOCALE, defaultLocale } = useRouter()
@@ -100,10 +106,14 @@
       includePlaceholder={themeContext.layout === "default"}
     />
     <!-- {tocEl} -->
+    <nav class={cn(classes.toc, "px-4")} aria-label="table of contents">
+      <Toc />
+    </nav>
+    
     <!-- <SkipNavContent /> -->
     <!-- activeType !== 'page' && themeContext.breadcrumb ? (<Breadcrumb activePath={activePath} /> ) : null -->
     <!-- activeType !== 'page' && themeContext.pagination ? (<NavLinks flatDirectories={flatDocsDirectories} currentIndex={activeIndex} /> ) : null -->
-    <Body {themeContext} breadcrumb={[]} timestamp={timestamp} navigation={[]}>
+    <Body {themeContext} breadcrumb={[]} {timestamp} navigation={[]}>
       <!-- <MDXProvider
             components={getComponents({
               isRawLayout: themeContext.layout === 'raw',
@@ -115,7 +125,7 @@
     </Body>
     <!-- </ActiveAnchorProvider> -->
   </div>
-  <Footer menu={hideSidebar}/>
+  <Footer menu={hideSidebar} />
   <!-- {themeContext.footer &&
       renderComponent(config.footer.component, { menu: hideSidebar })} -->
 </div>

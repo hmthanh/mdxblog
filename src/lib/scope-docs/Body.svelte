@@ -11,11 +11,15 @@
 <script>
   import cn from "clsx"
   import Breadcrumb from "./components/breadcrumb.svelte"
+  import NavLinks from "./components/nav-links.svelte"
+  import Timestamp from "./Timestamp.svelte"
 
   export let themeContext = { layout: "full", typesetting: "article" }
   export let breadcrumb
   export let timestamp
   export let navigation
+  let flatDocsDirectories
+  let activeIndex
 
   const classes = {
     toc: cn("nextra-toc order-last hidden w-64 shrink-0 xl:block print:hidden"),
@@ -43,6 +47,8 @@
     <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
       <Breadcrumb />
       <slot />
+      <Timestamp />
+      <NavLinks flatDirectories={flatDocsDirectories} currentIndex={activeIndex} />
     </main>
   </article>
 {/if}
