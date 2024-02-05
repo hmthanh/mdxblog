@@ -28,16 +28,18 @@
 <PWA />
 <!-- <SvelteTheme /> -->
 
-<!-- <InnterLayout> -->
+
+<InnterLayout>
   <slot />
-<!-- </InnterLayout> -->
+</InnterLayout>
 
 <!-- <div class="container">
   <Header />
 
     
-  <Footer />
+  
 </div> -->
+<Footer />
 
 <style lang="css">
 </style>

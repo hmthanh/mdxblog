@@ -4,6 +4,7 @@
   import Banner from "./components/banner.svelte"
   import Sidebar from "./components/sidebar.svelte"
   import Body from "./Body.svelte"
+  import Footer from "./components/footer.svelte"
   export let filePath
   export let pageMap
   export let frontMatter
@@ -98,12 +99,11 @@
       asPopover={hideSidebar}
       includePlaceholder={themeContext.layout === "default"}
     />
-    {tocEl}
-    <slot />
+    <!-- {tocEl} -->
     <!-- <SkipNavContent /> -->
     <!-- activeType !== 'page' && themeContext.breadcrumb ? (<Breadcrumb activePath={activePath} /> ) : null -->
     <!-- activeType !== 'page' && themeContext.pagination ? (<NavLinks flatDirectories={flatDocsDirectories} currentIndex={activeIndex} /> ) : null -->
-    <Body {themeContext} breadcrumb={[]} timestamp={"timestamp"} navigation={[]}>
+    <Body {themeContext} breadcrumb={[]} timestamp={timestamp} navigation={[]}>
       <!-- <MDXProvider
             components={getComponents({
               isRawLayout: themeContext.layout === 'raw',
@@ -115,6 +115,7 @@
     </Body>
     <!-- </ActiveAnchorProvider> -->
   </div>
+  <Footer menu={hideSidebar}/>
   <!-- {themeContext.footer &&
       renderComponent(config.footer.component, { menu: hideSidebar })} -->
 </div>

@@ -14,7 +14,7 @@ import { z } from 'zod'
 // import { useConfig } from './contexts'
 // import { getGitIssueUrl, useGitEditUrl } from './utils'
 import { SvelteComponent } from 'svelte'
-import { themeOptionsSchema, ThemeSwitch } from "scope-docs/components/theme-switch.svelte"
+// import { themeOptionsSchema, ThemeSwitch } from "scope-docs/components/theme-switch.svelte"
 
 export const DEFAULT_LOCALE = 'en-US'
 
