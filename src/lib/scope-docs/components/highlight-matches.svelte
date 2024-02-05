@@ -1,0 +1,46 @@
+<script lang="ts" context="module">
+  type MatchArgs = {
+    value?: string
+    match: string
+  }
+</script>
+
+<script lang="ts">
+  import escapeStringRegexp from "escape-string-regexp"
+  import type { SvelteComponent } from "svelte"
+
+  let values
+  let match
+
+  //   if (!value) {
+  //     return null
+  //   }
+
+  // const splitText = value.split('')
+  //   const escapedSearch = escapeStringRegexp(match.trim())
+  //   const regexp = new RegExp(escapedSearch.replaceAll(' ', '|'), 'ig')
+  //   let result
+  //   let index = 0
+  //   const content: (string | SvelteComponent)[] = []
+
+  //   while (
+  //     (result = regexp.exec(value)) &&
+  //     // case `>  ` replaced previously to `>||` + some character provoke memory leak because
+  //     // `RegExp#exec` will always return a match
+  //     regexp.lastIndex !== 0
+  //   ) {
+  //     const before = splitText.splice(0, result.index - index).join('')
+  //     const after = splitText.splice(0, regexp.lastIndex - result.index).join('')
+  //     content.push(
+  //       before,
+  //       <span key={result.index} class="text-primary-600">
+  //         {after}
+  //       </span>
+  //     )
+  //     index = regexp.lastIndex
+  //   }
+</script>
+
+<!-- {content} -->
+<!-- {splitText.join('')} -->
+<slot />

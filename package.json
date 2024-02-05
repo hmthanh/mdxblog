@@ -70,6 +70,8 @@
     "@popperjs/core": "^2.11.8",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "clsx": "^2.1.0",
+    "escape-string-regexp": "^5.0.0",
+    "flexsearch": "^0.7.43",
     "reading-time-estimator": "^1.9.4",
     "rehype-pretty-code": "^0.12.6",
     "remark": "^15.0.1",
