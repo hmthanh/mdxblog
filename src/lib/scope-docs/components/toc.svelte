@@ -18,56 +18,57 @@
     <ul>
       <li class="my-2 scroll-my-6 scroll-py-6">
         <a
-          href="#quick-start-from-template"
+          href="/" 
+          
           class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words"
           >Quick Start from Template</a
         >
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
         <a
-          href="#deploy-to-vercel"
+          href="/"
           class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words"
           >Deploy to Vercel</a
         >
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
         <a
-          href="#fork-the-template"
+          href="/"
           class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words"
           >Fork the Template</a
         >
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
         <a
-          href="#start-as-new-project"
+          href="/"
           class="font-semibold inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words"
           >Start as New Project</a
         >
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
         <a
-          href="#install"
+          href="/"
           class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words"
           >Install</a
         >
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
         <a
-          href="#add-nextjs-config"
+          href="/"
           class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words"
           >Add Next.js Config</a
         >
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
         <a
-          href="#create-docs-theme-config"
+          href="/"
           class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words"
           >Create Docs Theme Config</a
         >
       </li>
       <li class="my-2 scroll-my-6 scroll-py-6">
         <a
-          href="#ready-to-go"
+          href="/"
           class="ltr:pl-4 rtl:pr-4 inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 contrast-more:text-gray-900 contrast-more:underline contrast-more:dark:text-gray-50 w-full break-words"
           >Ready to Go!</a
         >
@@ -147,7 +148,7 @@ export function TOC({ headings, filePath }: TOCProps): ReactElement {
   useEffect(() => {
     if (!activeSlug) return
     const anchor = tocRef.current?.querySelector(
-      `li > a[href="#${activeSlug}"]`
+      `li > a[href="/`
     )
 
     if (anchor) {

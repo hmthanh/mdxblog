@@ -51,7 +51,7 @@
         class="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400"
       >
         Quick Start from Template<a
-          href="#quick-start-from-template"
+          href="/"
           id="quick-start-from-template"
           class="subheading-anchor"
           aria-label="Permalink for this section"
@@ -60,7 +60,7 @@
       </h2>
       <h3 class="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl">
         Deploy to Vercel<a
-          href="#deploy-to-vercel"
+          href="/"
           id="deploy-to-vercel"
           class="subheading-anchor"
           aria-label="Permalink for this section"
