@@ -3,6 +3,8 @@
   import type { SvelteComponent } from "svelte"
   import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions, Transition } from "scope-ui"
   // import { CheckIcon } from "scope-docs"
+  import { createEventDispatcher } from "svelte"
+  import { CheckIcon } from ".."
 
   interface MenuOption {
     key: string
@@ -17,6 +19,18 @@
     className?: string
   }
 
+  // export let options
+  // export let selected
+
+  const dispatch = createEventDispatcher()
+
+  function handleSelect(option) {
+    selected = option
+    dispatch("change", option)
+  }
+
+  let menuOpen = false
+
   export let options: MenuOption[] | undefined
   export let selected: MenuOption | undefined
   export let onChange: (option: MenuOption) => void
@@ -24,35 +38,71 @@
   let _class
   export { _class as class }
 
-  const people = [
-    { id: 1, name: "Durward Reynolds", unavailable: false },
-    { id: 2, name: "Kenton Towne", unavailable: false },
-    { id: 3, name: "Therese Wunsch", unavailable: false },
-    { id: 4, name: "Benedict Kessler", unavailable: true },
-    { id: 5, name: "Katelyn Rohan", unavailable: false },
-  ]
-
-  let selectedPerson = people[0]
+  let open = false
+  let active = false
 </script>
 
-<Listbox
-  bind:value={selectedPerson}
+<!-- <Listbox value={selected} onChange={onChange}>
+</Listbox> -->
+
+<button
   class={cn(
-    "nx-h-7 nx-rounded-md nx-px-2 nx-text-left nx-text-xs nx-font-medium nx-text-gray-600 nx-transition-colors dark:nx-text-gray-400",
-    // open
-    //   ? "nx-bg-gray-200 nx-text-gray-900 dark:nx-bg-primary-100/10 dark:nx-text-gray-50"
-    //   : "hover:nx-bg-gray-100 hover:nx-text-gray-900 dark:hover:nx-bg-primary-100/5 dark:hover:nx-text-gray-50",
+    "h-7 rounded-md px-2 text-left text-xs font-medium text-gray-600 transition-colors dark:text-gray-400",
+    open
+      ? "bg-gray-200 text-gray-900 dark:bg-primary-100/10 dark:text-gray-50"
+      : "hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-primary-100/5 dark:hover:text-gray-50",
     _class
   )}
+  on:click={() => (menuOpen = !menuOpen)}
 >
-  <ListboxButton>{selectedPerson.name}</ListboxButton>
-  <Transition
+  {@html selected.name}
+</button>
+
+<!-- class:selected={option.key === selected.key} -->
+{#if menuOpen}
+  <div class="menu">
+    {#each options as option}
+      <div
+        class={cn(
+          active ? "bg-primary-50 text-primary-600 dark:bg-primary-500/10" : "text-gray-800 dark:text-gray-100",
+          "relative cursor-pointer whitespace-nowrap py-1.5",
+          "transition-colors ltr:pl-3 ltr:pr-9 rtl:pr-3 rtl:pl-9"
+        )}
+        on:click={() => handleSelect(option)}
+      >
+        {@html option.name}
+        {#if option.key === selected.key}
+          <span class="absolute inset-y-0 flex items-center ltr:right-3 rtl:left-3">
+            <CheckIcon />
+          </span>
+        {/if}
+      </div>
+    {/each}
+  </div>
+{/if}
+
+<!-- <Listbox
+  bind:value={selectedPerson}
+  class={cn(
+    "h-7 rounded-md px-2 text-left text-xs font-medium text-gray-600 transition-colors dark:text-gray-400",
+    // open
+    //   ? "bg-gray-200 text-gray-900 dark:bg-primary-100/10 dark:text-gray-50"
+    //   : "hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-primary-100/5 dark:hover:text-gray-50",
+    _class
+  )}
+> -->
+<!-- {({ open }) => {
+  return (<ListboxButton>{selectedPerson.name}</ListboxButton>)
+}} -->
+<!-- <Transition
+    as={Listbox.Options}
+    class="z-20 max-h-64 overflow-auto rounded-md ring-1 ring-black/5 bg-white py-1 text-sm shadow-lg dark:ring-white/20 dark:bg-neutral-800"
+              leave="transition-opacity"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
     enter="transition duration-100 ease-out"
     enterFrom="transform scale-95 opacity-0"
     enterTo="transform scale-100 opacity-100"
-    leave="transition duration-75 ease-out"
-    leaveFrom="transform scale-100 opacity-100"
-    leaveTo="transform scale-95 opacity-0"
   >
     <ListboxOptions>
       {#each people as person (person.id)}
@@ -63,13 +113,13 @@
           let:selected
         >
           {#if selected}
-            <!-- <CheckIcon /> -->
+            <CheckIcon />
           {/if}
           {person.name}
         </ListboxOption>
       {/each}
     </ListboxOptions>
   </Transition>
-</Listbox>
+</Listbox> -->
 
-<div>Hello</div>
+<!-- <div>Hello</div> -->

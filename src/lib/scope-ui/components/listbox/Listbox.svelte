@@ -3,7 +3,6 @@
     Open,
     Closed,
   }
-
   export type ListboxOptionDataRef = {
     textValue: string
     disabled: boolean
@@ -52,7 +51,7 @@
     TAsProp,
     "div"
   > & {
-    /** Whether the entire `Listbox` and its children shfould be disabled */
+    /** Whether the entire `Listbox` and its children should be disabled */
     disabled?: boolean
     /** Whether the entire `Listbox` should be oriented horizontally instead of vertically */
     horizontal?: boolean
@@ -69,8 +68,7 @@
   import { match } from "scope-ui/utils/match"
   import { State, useOpenClosedProvider } from "scope-ui/internal/open-closed"
   import { forwardEventsBuilder } from "scope-ui/internal/forwardEventsBuilder"
-  // import { get_current_component } from "svelte/internal"
-  import { page } from "$app/stores"
+  import { get_current_component } from "svelte/internal"
   import type { SupportedAs } from "scope-ui/internal/elements"
   import type { HTMLActionArray } from "scope-ui/hooks/use-actions"
   import Render from "scope-ui/utils/Render.svelte"
@@ -87,7 +85,7 @@
   export let value: StateDefinition["value"]
 
   /***** Events *****/
-  // const forwardEvents = forwardEventsBuilder($page)
+  const forwardEvents = forwardEventsBuilder(get_current_component())
 
   /***** Component *****/
   $: orientation = (horizontal ? "horizontal" : "vertical") as StateDefinition["orientation"]
@@ -253,7 +251,6 @@
 </script>
 
 <svelte:window on:mousedown={handleMousedown} />
-<Render {...$$restProps} {as} {slotProps} use={[...use]} name={"Listbox"}>
+<Render {...$$restProps} {as} {slotProps} use={[...use, forwardEvents]} name={"Listbox"}>
   <slot {...slotProps} />
 </Render>
-<!-- {as} -->

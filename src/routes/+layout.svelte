@@ -29,7 +29,7 @@
 <PWA />
 <!-- <SvelteTheme /> -->
 <div class="container">
-  <!-- <Header /> -->
+  <Header />
   
   <!-- <Navbar/> -->
   <!-- <Anchor >sdfsdffsdf</Anchor> -->

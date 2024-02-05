@@ -1,4 +1,5 @@
 <script lang="ts" context="module">
+  import { get_current_component } from "svelte/internal"
   import { isValidElement, type SupportedAs } from "scope-ui/internal/elements"
 
   export enum RenderStrategy {
@@ -8,9 +9,11 @@
 </script>
 
 <script lang="ts">
+  import { forwardEventsBuilder } from "../internal/forwardEventsBuilder"
+
   import { useActions, type HTMLActionArray } from "scope-ui/hooks/use-actions"
   import { Features, type TRenderProps } from "scope-ui/types"
-  // const forwardEvents = forwardEventsBuilder(get_current_component())
+  const forwardEvents = forwardEventsBuilder(get_current_component())
 
   type TSlotProps = $$Generic<{}>
   type TAsProp = $$Generic<SupportedAs>
@@ -64,6 +67,7 @@
       this={as}
       bind:this={el}
       use:useActions={use}
+      use:forwardEvents
       {...$$restProps}
       {...propsWeControl}
       hidden={hidden || undefined}
@@ -74,7 +78,7 @@
     <svelte:component
       this={as}
       bind:el
-      use={[...use]}
+      use={[...use, forwardEvents]}
       {...$$restProps}
       {...propsWeControl}
       hidden={hidden || undefined}

@@ -9,7 +9,7 @@
   import { z } from "zod"
   import { browser } from "$app/environment"
   import { SunIcon, MoonIcon } from "../icons"
-  let _class
+  let _class = ""
   export { _class as class }
 
   type ThemeSwitchProps = {
@@ -43,6 +43,16 @@
   //   typeof config.useOptions === 'function'
   //     ? config.useOptions()
   //     : config.useOptions
+  const people = [
+    { key: "Durward", name: "Durward Reynolds" },
+    { key: "Kenton", name: "Kenton Towne" },
+    { key: "Therese", name: "Therese Wunsch" },
+    { key: "Benedict", name: "Benedict Kessler" },
+    { key: "Katelyn", name: "Katelyn Rohan" },
+  ]
+
+  let selectedPerson = people[0]
+
   const options = "light"
 </script>
 
@@ -75,7 +85,7 @@
   }}
   selected={{
     key: theme,
-    name: "",
+    name: 'html',
     // <div className="flex items-center gap-2 capitalize">
     //   <IconToUse />
     //   <span className={lite ? 'md:hidden' : ''}>
