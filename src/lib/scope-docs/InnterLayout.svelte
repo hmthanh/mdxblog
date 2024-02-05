@@ -3,6 +3,7 @@
   import Head from "./components/head.svelte"
   import Banner from "./components/banner.svelte"
   import Sidebar from "./components/sidebar.svelte"
+  import Body from "./Body.svelte"
   export let filePath
   export let pageMap
   export let frontMatter
@@ -37,7 +38,7 @@
   //     }),
   //   [pageMap, locale, defaultLocale, fsPath]
   // )
-  let themeContext = { layout: {} }
+  let themeContext = { layout: "full", typesetting: "article" }
 
   // const themeContext = { ...activeThemeContext, ...frontMatter }
   // const hideSidebar =
@@ -98,33 +99,20 @@
       includePlaceholder={themeContext.layout === "default"}
     />
     {tocEl}
+    <slot />
     <!-- <SkipNavContent /> -->
-    <!-- <Body
-          themeContext={themeContext}
-          breadcrumb={
-            activeType !== 'page' && themeContext.breadcrumb ? (
-              <Breadcrumb activePath={activePath} />
-            ) : null
-          }
-          timestamp={timestamp}
-          navigation={
-            activeType !== 'page' && themeContext.pagination ? (
-              <NavLinks
-                flatDirectories={flatDocsDirectories}
-                currentIndex={activeIndex}
-              />
-            ) : null
-          }
-        >
-          <MDXProvider
+    <!-- activeType !== 'page' && themeContext.breadcrumb ? (<Breadcrumb activePath={activePath} /> ) : null -->
+    <!-- activeType !== 'page' && themeContext.pagination ? (<NavLinks flatDirectories={flatDocsDirectories} currentIndex={activeIndex} /> ) : null -->
+    <Body {themeContext} breadcrumb={[]} timestamp={"timestamp"} navigation={[]}>
+      <!-- <MDXProvider
             components={getComponents({
               isRawLayout: themeContext.layout === 'raw',
               components: config.components
             })}
-          >
-            {children}
-          </MDXProvider>
-        </Body> -->
+          > -->
+      <slot />
+      <!-- </MDXProvider> -->
+    </Body>
     <!-- </ActiveAnchorProvider> -->
   </div>
   <!-- {themeContext.footer &&

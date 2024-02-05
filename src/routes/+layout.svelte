@@ -21,24 +21,23 @@
   import ListboxLabel from "scope-ui/components/listbox/ListboxLabel.svelte"
   import ListboxOption from "scope-ui/components/listbox/ListboxOption.svelte"
   import ListboxOptions from "scope-ui/components/listbox/ListboxOptions.svelte"
-  import { CheckIcon } from "scope-docs"
+  import { CheckIcon, InnterLayout } from "scope-docs"
   // import ""
-
-  
 </script>
 
 <PWA />
 <!-- <SvelteTheme /> -->
-<div class="container">
+
+<!-- <InnterLayout> -->
+  <slot />
+<!-- </InnterLayout> -->
+
+<!-- <div class="container">
   <Header />
-  
-  <!-- <Navbar/> -->
-  <!-- <Anchor >sdfsdffsdf</Anchor> -->
-  <main class="main-container">
-    <slot />
-  </main>
+
+    
   <Footer />
-</div>
+</div> -->
 
 <style lang="css">
 </style>
