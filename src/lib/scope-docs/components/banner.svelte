@@ -51,6 +51,9 @@ export function Banner(): ReactElement | null {
 } -->
 <script>
   import cn from "clsx"
+  import { XIcon } from ".."
+
+  let banner = { key: "banner" }
 </script>
 
 <div
@@ -64,6 +67,21 @@ export function Banner(): ReactElement | null {
   <div class="w-full truncate px-4 text-center font-medium text-sm">
     <!-- {renderComponent(banner.text)} -->
   </div>
+  <button
+    type="button"
+    aria-label="Dismiss banner"
+    class="w-8 h-8 opacity-80 hover:opacity-100"
+    on:click={() => {
+      try {
+        localStorage.setItem(banner.key, "0")
+      } catch {
+        /* ignore */
+      }
+      document.body.classList.add("nextra-banner-hidden")
+    }}
+  >
+    <XIcon className="mx-auto h-4 w-4" />
+  </button>
   <!-- {banner.dismissible && (
           <button
             type="button"
