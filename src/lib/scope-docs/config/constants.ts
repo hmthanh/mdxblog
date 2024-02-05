@@ -10,11 +10,11 @@ import { z } from 'zod'
 // import { Anchor, Flexsearch, Footer, Navbar, TOC } from './components'
 // import { MatchSorterSearch } from './components/match-sorter-search'
 // import type { NavBarProps } from './components/navbar'
-import { themeOptionsSchema, ThemeSwitch } from "scope-docs/components/theme-switch.svelte"
 // import type { TOCProps } from './components/toc'
 // import { useConfig } from './contexts'
 // import { getGitIssueUrl, useGitEditUrl } from './utils'
-import { ComponentProps, SvelteComponent } from 'svelte'
+import { SvelteComponent } from 'svelte'
+import { themeOptionsSchema, ThemeSwitch } from "scope-docs/components/theme-switch.svelte"
 
 export const DEFAULT_LOCALE = 'en-US'
 
@@ -214,7 +214,7 @@ export type PartialDocsThemeConfig = z.infer<typeof publicThemeSchema>
 
 const LOADING_LOCALES: Record<string, string> = {
   'en-US': 'Loading',
-  fr: 'Сhargement',
+  fr: 'Chargement',
   ru: 'Загрузка',
   'zh-CN': '正在加载'
 }
@@ -232,12 +232,14 @@ export const DEFAULT_THEME: DocsThemeConfig = {
     key: 'nextra-banner'
   },
   chat: {
-    icon: (
-      <>
-      <DiscordIcon />
-      < span className="nx-sr-only" > Discord < /span>
-      < />
-    )
+    icon: (() => {
+      return {@html <div>22</div>}})
+    // (
+    //   <>
+    //   <DiscordIcon />
+    //   <span className="sr-only"> Discord </span>
+    //   </>
+    // )
   },
 darkMode: true,
   direction: 'ltr',
@@ -291,15 +293,15 @@ gitTimestamp: function GitTimestamp({ timestamp }) {
 },
 head: (
   <>
-  <meta name= "msapplication-TileColor" content = "#fff" />
+    <meta name= "msapplication-TileColor" content = "#fff" />
     <meta httpEquiv="Content-Language" content = "en" />
-      <meta name="description" content = "Nextra: the next docs builder" />
-        <meta name="twitter:card" content = "summary_large_image" />
-          <meta name="twitter:site" content = "@hmthanh" />
-            <meta property="og:title" content = "Nextra: the next docs builder" />
-              <meta property="og:description" content = "Nextra: the next docs builder" />
-                <meta name="apple-mobile-web-app-title" content = "Nextra" />
-                  </>
+    <meta name="description" content = "Nextra: the next docs builder" />
+    <meta name="twitter:card" content = "summary_large_image" />
+    <meta name="twitter:site" content = "@hmthanh" />
+    <meta property="og:title" content = "Nextra: the next docs builder" />
+    <meta property="og:description" content = "Nextra: the next docs builder" />
+    <meta name="apple-mobile-web-app-title" content = "Nextra" />
+  </>
   ),
 i18n: [],
   logo: (

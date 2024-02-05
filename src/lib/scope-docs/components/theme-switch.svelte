@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" context="module">
   //     import { useTheme } from 'next-themes'
   // import { useMounted } from 'nextra/hooks'
   // import { MoonIcon, SunIcon } from 'nextra/icons'
@@ -12,7 +12,7 @@
   let _class = ""
   export { _class as class }
 
-  type ThemeSwitchProps = {
+  export type ThemeSwitchProps = {
     lite?: boolean
     className?: string
   }
@@ -36,8 +36,6 @@
     // Update theme
   }
 
-  $: icon = theme === "dark" ? MoonIcon : SunIcon
-
   //   const IconToUse = mounted && resolvedTheme === 'dark' ? MoonIcon : SunIcon
   // const options: ThemeOptions =
   //   typeof config.useOptions === 'function'
@@ -54,6 +52,10 @@
   let selectedPerson = people[0]
 
   const options = "light"
+</script>
+
+<script lang="ts">
+  $: icon = theme === "dark" ? MoonIcon : SunIcon
 </script>
 
 <!-- {#if browser}
@@ -85,7 +87,7 @@
   }}
   selected={{
     key: theme,
-    name: 'html',
+    name: "html",
     // <div className="flex items-center gap-2 capitalize">
     //   <IconToUse />
     //   <span className={lite ? 'md:hidden' : ''}>

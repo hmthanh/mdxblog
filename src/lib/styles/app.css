@@ -1,11 +1,12 @@
-@import "./docs/hamburger.css";
-@import "./docs/typesetting-article.css";
-@import "./theme/variables.css";
-@import "./theme/code-block.css";
-@import "./theme/subheading-anchor.css";
-@import "./theme/scrollbar.css";
-@import "./theme/steps.css";
-@import "./theme/cards.css";
+/* @import "./docs/hamburger.css";
+@import "./docs/typesetting-article.css"; */
+/* @import "../scope-core/styles/variables.css";
+@import "../scope-core/styles/code-block.css";
+@import "../scope-core/styles/subheading-anchor.css";
+@import "../scope-core/styles/scrollbar.css";
+@import "../scope-core/styles/steps.css";
+@import "../scope-core/styles/cards.css"; */
+@import "scope-docs/styles/styles.css";
 
 @tailwind base;
 @tailwind components;

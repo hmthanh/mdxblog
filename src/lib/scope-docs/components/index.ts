@@ -1,2 +1,6 @@
 export { default as Select } from "./select.svelte"
 export { default as ThemeSwitch } from "./theme-switch.svelte"
+export { default as Sidebar } from "./sidebar.svelte"
+export { default as NavToc } from "./toc.svelte"
+export { default as BreadCrumb } from "./breadcrumb.svelte"
+export { default as NavLinks } from "./nav-links.svelte"
