@@ -6,7 +6,7 @@ export const Table = ({
   ...props
 }: ComponentProps<'table'>) => (
   <table
-    className={cn('nx-block nx-overflow-x-scroll', className)}
+    className={cn('block overflow-x-scroll', className)}
     {...props}
   />
 ) -->

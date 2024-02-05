@@ -55,13 +55,13 @@
   {#if $config.darkMode || $config.i18n || $config.sidebar.toggleButton}
     <div
       class={cn(
-        "nx-sticky nx-bottom-0",
-        "nx-bg-white dark:nx-bg-dark", // when banner is showed, sidebar links can be behind menu, set bg color as body bg color
-        "nx-mx-4 nx-py-4 nx-shadow-[0_-12px_16px_#fff]",
-        "nx-flex nx-items-center nx-gap-2",
-        "dark:nx-border-neutral-800 dark:nx-shadow-[0_-12px_16px_#111]",
-        "contrast-more:nx-border-neutral-400 contrast-more:nx-shadow-none contrast-more:dark:nx-shadow-none",
-        showSidebar ? cn(hasI18n && "nx-justify-end", "nx-border-t") : "nx-py-4 nx-flex-wrap nx-justify-center"
+        "sticky bottom-0",
+        "bg-white dark:bg-dark", // when banner is showed, sidebar links can be behind menu, set bg color as body bg color
+        "mx-4 py-4 shadow-[0_-12px_16px_#fff]",
+        "flex items-center gap-2",
+        "dark:border-neutral-800 dark:shadow-[0_-12px_16px_#111]",
+        "contrast-more:border-neutral-400 contrast-more:shadow-none contrast-more:dark:shadow-none",
+        showSidebar ? cn(hasI18n && "justify-end", "border-t") : "py-4 flex-wrap justify-center"
       )}
       in:fade={{ duration: 150 }}
       out:fade={{ duration: 150 }}

@@ -19,7 +19,7 @@
         {...props}
       >
         {children}
-        <span className="nx-sr-only nx-select-none"> (opens in a new tab)</span>
+        <span className="sr-only select-none"> (opens in a new tab)</span>
       </a>
     )
   }

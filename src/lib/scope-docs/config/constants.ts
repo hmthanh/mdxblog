@@ -306,8 +306,8 @@ head: (
 i18n: [],
   logo: (
     <>
-    <span className= "nx-font-extrabold" > Nextra < /span>
-    < span className = "nx-ml-2 nx-hidden nx-font-normal nx-text-gray-600 md:nx-inline" >
+    <span className= "font-extrabold" > Nextra < /span>
+    < span className = "ml-2 hidden font-normal text-gray-600 md:inline" >
       The Next Docs Builder
         < /span>
         < />
@@ -337,7 +337,7 @@ project: {
   icon: (
     <>
     <GitHubIcon />
-    < span className = "nx-sr-only" > GitHub < /span>
+    < span className = "sr-only" > GitHub < /span>
       < />
     )
 },
@@ -351,7 +351,7 @@ search: {
       )
   },
   emptyResult: (
-    <span className= "nx-block nx-select-none nx-p-8 nx-text-center nx-text-sm nx-text-gray-400" >
+    <span className= "block select-none p-8 text-center text-sm text-gray-400" >
     No results found.
       < /span>
     ),
