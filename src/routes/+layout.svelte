@@ -28,7 +28,7 @@
 <!-- <SvelteTheme /> -->
 
 <InnterLayout>
-    <slot />
+  <slot />
 </InnterLayout>
 
 <style lang="css">

@@ -72,6 +72,7 @@
     "clsx": "^2.1.0",
     "escape-string-regexp": "^5.0.0",
     "flexsearch": "^0.7.43",
+    "match-sorter": "^6.3.3",
     "reading-time-estimator": "^1.9.4",
     "rehype-pretty-code": "^0.12.6",
     "remark": "^15.0.1",

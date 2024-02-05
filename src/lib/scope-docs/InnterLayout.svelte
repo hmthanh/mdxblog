@@ -6,6 +6,7 @@
   import Body from "./Body.svelte"
   import Footer from "./components/footer.svelte"
   import Toc from "./components/toc.svelte"
+  import Navbar from "./components/navbar.svelte"
   export let filePath
   export let pageMap
   export let frontMatter
@@ -25,6 +26,7 @@
   let flatDirectories = []
   let directories = []
   let hideSidebar = false
+  let topLevelNavbarItems = []
   // const {
   //   activeType,
   //   activeIndex,
@@ -90,6 +92,7 @@
 <div dir={direction}>
   <Head />
   <Banner />
+  <Navbar {flatDirectories} items={topLevelNavbarItems} />
   <!-- {themeContext.navbar &&
       renderComponent(config.navbar.component, {
         flatDirectories,
@@ -109,7 +112,7 @@
     <nav class={cn(classes.toc, "px-4")} aria-label="table of contents">
       <Toc />
     </nav>
-    
+
     <!-- <SkipNavContent /> -->
     <!-- activeType !== 'page' && themeContext.breadcrumb ? (<Breadcrumb activePath={activePath} /> ) : null -->
     <!-- activeType !== 'page' && themeContext.pagination ? (<NavLinks flatDirectories={flatDocsDirectories} currentIndex={activeIndex} /> ) : null -->
