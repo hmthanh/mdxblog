@@ -7,6 +7,7 @@
   import Footer from "./components/footer.svelte"
   import Toc from "./components/toc.svelte"
   import Navbar from "./components/navbar.svelte"
+  import SkipNavContent from "./components/skip-nav-content.svelte"
   export let filePath
   export let pageMap
   export let frontMatter
@@ -109,11 +110,12 @@
       includePlaceholder={themeContext.layout === "default"}
     />
     <!-- {tocEl} -->
+
     <nav class={cn(classes.toc, "px-4")} aria-label="table of contents">
       <Toc />
-    </nav>
+    </nav>  
 
-    <!-- <SkipNavContent /> -->
+    <SkipNavContent />
     <!-- activeType !== 'page' && themeContext.breadcrumb ? (<Breadcrumb activePath={activePath} /> ) : null -->
     <!-- activeType !== 'page' && themeContext.pagination ? (<NavLinks flatDirectories={flatDocsDirectories} currentIndex={activeIndex} /> ) : null -->
     <Body {themeContext} breadcrumb={[]} {timestamp} navigation={[]}>
