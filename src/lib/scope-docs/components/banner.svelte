@@ -51,7 +51,7 @@ export function Banner(): ReactElement | null {
 } -->
 <script>
   import cn from "clsx"
-  import { XIcon } from ".."
+  import { XIcon } from "scope-docs/icons"
 
   let banner = { key: "banner" }
 </script>

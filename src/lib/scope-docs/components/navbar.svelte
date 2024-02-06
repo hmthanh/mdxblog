@@ -69,7 +69,7 @@
     ><a
       class="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 relative -ml-2 hidden whitespace-nowrap p-2 md:inline-block text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
       aria-current="false"
-      href="/showcase"
+      href="/"
       ><span class="absolute inset-x-0 text-center">Showcase</span><span class="invisible font-medium"
         >Showcase</span
       ></a
