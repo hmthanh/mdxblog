@@ -8,6 +8,7 @@
   import Toc from "./components/toc.svelte"
   import Navbar from "./components/navbar.svelte"
   import SkipNavContent from "./components/skip-nav-content.svelte"
+  import { ThemeSwitch } from "scope-docs/components"
   export let filePath
   export let pageMap
   export let frontMatter
@@ -92,7 +93,7 @@
     /> -->
 <div dir={direction}>
   <Head />
-  <Banner />
+  <!-- <Banner /> -->
   <Navbar {flatDirectories} items={topLevelNavbarItems} />
   <!-- {themeContext.navbar &&
       renderComponent(config.navbar.component, {
@@ -113,7 +114,7 @@
 
     <nav class={cn(classes.toc, "px-4")} aria-label="table of contents">
       <Toc />
-    </nav>  
+    </nav>
 
     <SkipNavContent />
     <!-- activeType !== 'page' && themeContext.breadcrumb ? (<Breadcrumb activePath={activePath} /> ) : null -->

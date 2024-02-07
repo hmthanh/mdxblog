@@ -6,9 +6,9 @@ lastUpdated: "2021-04-14T10:17:52.000+0100"
 seoMetaDescription: "Best medium format camera for starting out is probably a question at the front of your mind right now! Let's take a look."
 featuredImage: "best-medium-format-camera-for-starting-out.jpg"
 featuredImageAlt: "Photograph of a Hasselblad medium format camera with the focusing screen exposed"
-ogImage: "best-medium-format-camera-for-starting-out-open-graph.jpg"
-ogSquareImage: "best-medium-format-camera-for-starting-out-open-graph-square.jpg"
-twitterImage: "best-medium-format-camera-for-starting-out-twitter.jpg"
+# ogImage: "best-medium-format-camera-for-starting-out-open-graph.jpg"
+# ogSquareImage: "best-medium-format-camera-for-starting-out-open-graph-square.jpg"
+# twitterImage: "best-medium-format-camera-for-starting-out-twitter.jpg"
 categories: ""
 tags: ""
 ---
@@ -21,6 +21,30 @@ tags: ""
 ## What is a Medium Format Camera?
 
 If you are old enough to remember the analogue film camera era, chances are it is the 35&nbsp;mm canisters with the track cut down the side that first come to mind. Shots normally had a 3:2 aspect ratio, measuring 36&times;24&nbsp;mm. Medium format film is a far larger. There is no single prevalent form factor, the film is 60 mm across and depending on the camera you can shoot negative frames from 60&times;60 mm to 60 &times; 170&nbsp;mm. That said 1:1 and roughly 4:5 (from 60 &times; 70 frames) are probably most common. With 35 mm film, you could nominally get 24 or 36 exposures onto a film. Medium format film is most common in the 120 variety, which lets you shoot 12 exposures. Double length 220 film is less common now. If you do find a roll, you might need to adjust your camera when you load it. Cameras, like the Pentax 67 have a pressure plate to hold the film flat in the camera. Since 220 film does not have backing paper, it needs a different pressure setting.
+
+````md filename="Markdown"
+```js
+console.log("hello, world")
+```
+````
+
+Results in:
+
+```js
+console.log("hello, world")
+```
+
+## Features
+
+### Inlined Code
+
+Inlined syntax highlighting like `let x = 1{:jsx}` is also supported via the
+`{:}` syntax:
+
+```md filename="Markdown"
+Inlined syntax highlighting is also supported `let x = 1{:jsx}` via:
+```
+
 
 Another fact worth remembering is that a roll of 120 film contains around the same surface area as a roll of 36 exposure 35&nbsp;mm; you will find this useful if developing at home.
 

@@ -1,11 +1,3 @@
-/* @import "./docs/hamburger.css";
-@import "./docs/typesetting-article.css"; */
-/* @import "../scope-core/styles/variables.css";
-@import "../scope-core/styles/code-block.css";
-@import "../scope-core/styles/subheading-anchor.css";
-@import "../scope-core/styles/scrollbar.css";
-@import "../scope-core/styles/steps.css";
-@import "../scope-core/styles/cards.css"; */
 @import "scope-docs/styles/styles.css";
 
 @tailwind base;

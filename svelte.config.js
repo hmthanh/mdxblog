@@ -1,11 +1,29 @@
 /** @type {import('@sveltejs/kit').Config} */
 import adapter from "@sveltejs/adapter-static"
-import { mdsvex } from "mdsvex"
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte"
+import { escapeSvelte, mdsvex } from "mdsvex"
+import { getHighlighter } from "shiki"
+import remarkToc from "remark-toc";
+
+/** @type {import('mdsvex').MdsvexOptions} */
+const mdsvexOptions = {
+  extensions: [".svelte.md", ".md", ".svx"],
+  highlight: {
+    highlighter: async (code, lang = "text") => {
+      // const highlighter = await getHighlighter({ themes: "poimandres" })
+      const highlighter = await getHighlighter({
+        themes: ["poimandres"],
+        langs: ["javascript"],
+      })
+      const html = escapeSvelte(highlighter.codeToHtml(code, { lang: "text", theme: "poimandres" }))
+      return `{@html \`${html}\`}` // html
+    },
+  },
+}
 
 const config = {
   extensions: [".svelte", ".md", ".svelte.md"],
-  preprocess: [vitePreprocess({}), mdsvex({ extensions: [".svelte.md", ".md", ".svx"] })],
+  preprocess: [vitePreprocess({}), mdsvex(mdsvexOptions)],
   kit: {
     adapter: adapter({ precompress: true }),
     alias: {

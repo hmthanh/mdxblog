@@ -6,9 +6,14 @@ export async function load({ params, url }) {
   const { pathname } = url
 
   const postPromise = import(`../../content/blog/${slug}/index.md`)
+  // await postPromise.then((data) => {
+    // console.log("postPromise", JSON.stringify(data.default));
+    // console.log("postPromise", data.metadata);
+  // })
   const imageDataPromise = import(`../../lib/generated/posts/${pathname.slice(1)}.js`)
 
   const [postResult, imageDataResult] = await Promise.all([postPromise, imageDataPromise])
+  // console.log("postResult ", postResult)
   const { default: page, metadata } = postResult
   const { default: imageData } = imageDataResult
 
@@ -18,6 +23,7 @@ export async function load({ params, url }) {
     }
   }
 
+  // console.log("metadata", metadata);
   const {
     datePublished,
     featuredImage,
@@ -38,7 +44,7 @@ export async function load({ params, url }) {
       ogSquareImage,
       postTitle,
       seoMetaDescription,
-      timeToRead: '', //readingTime(page, 10), //Math.ceil(readingTime(page).minutes),
+      timeToRead: "", //readingTime(page, 10), //Math.ceil(readingTime(page).minutes),
       twitterImage,
       slug,
     },

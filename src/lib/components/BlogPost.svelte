@@ -31,6 +31,7 @@
       slug,
     },
   ];
+  
   const featuredImageObject = {
     url: featuredImage,
     alt: featuredImageAlt,

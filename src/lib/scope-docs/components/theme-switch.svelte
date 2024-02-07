@@ -1,7 +1,9 @@
 <script lang="ts" context="module">
+  // import { SunIcon, MoonIcon } from 'nextra/icons';
+  import { fly } from "svelte/transition"
+  // import {MoonIcon, SunIcon} from "scope-core/icons"
   //     import { useTheme } from 'next-themes'
   // import { useMounted } from 'nextra/hooks'
-  // import { MoonIcon, SunIcon } from 'nextra/icons'
   // import type { ReactElement } from 'react'
   // import { z } from 'zod'
   // import { useConfig } from '../contexts'
@@ -9,6 +11,7 @@
   import { z } from "zod"
   import { browser } from "$app/environment"
   import { SunIcon, MoonIcon } from "../icons"
+  import { toggleTheme } from "scope-core/store"
   let _class = ""
   export { _class as class }
 
@@ -74,7 +77,7 @@
   { key: "system", name: options.system },
 ]} -->
 
-<Select
+<!-- <Select
   class={_class}
   title="Change theme"
   options={[
@@ -95,4 +98,18 @@
     //   </span>
     // </div>
   }}
-/>
+/> -->
+
+<button on:click={toggleTheme}>
+  {#if theme === "dark"}
+    <div in:fly={{ y: 10 }}>
+      <SunIcon></SunIcon>
+      <span>Light</span>
+    </div>
+  {:else}
+    <div in:fly={{ y: 10 }}>
+      <MoonIcon></MoonIcon>
+      <span>Dark</span>
+    </div>
+  {/if}
+</button>
