@@ -1,4 +1,5 @@
 @import "scope-docs/styles/styles.css";
+@import "./custom.css";
 
 @tailwind base;
 @tailwind components;

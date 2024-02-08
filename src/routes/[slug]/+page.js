@@ -6,11 +6,11 @@ export async function load({ params, url }) {
   const { pathname } = url
 
   const postPromise = import(`../../content/blog/${slug}/index.md`)
-  // await postPromise.then((data) => {
-    // console.log("postPromise", JSON.stringify(data.default));
-    // console.log("postPromise", data.metadata);
-  // })
   const imageDataPromise = import(`../../lib/generated/posts/${pathname.slice(1)}.js`)
+  // await postPromise.then((data) => {
+  //   console.log("postPromise", JSON.stringify(data.default));
+  //   console.log("postPromise", data.metadata);
+  // })
 
   const [postResult, imageDataResult] = await Promise.all([postPromise, imageDataPromise])
   // console.log("postResult ", postResult)
