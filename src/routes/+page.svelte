@@ -85,7 +85,7 @@
 
 <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
   <h1 class="text-center text-4xl tracking-tighter font-extrabold md:text-5xl mt-8">Pithagon</h1>
-  <div class="nextra-bleed relative -mx-6 mt-6 md:-mx-8 2xl:-mx-24">
+  <!-- <div class="nextra-bleed relative -mx-6 mt-6 md:-mx-8 2xl:-mx-24">
     <div class="mx-auto max-w-full w-[880px] text-center px-4 mb-10">
       <p class="text-lg mb-2 text-gray-600 md:!text-2xl">Wonderful science in your hand</p>
       <div class="grid grid-cols-4 gap-x-4 gap-y-8 my-10">
@@ -236,7 +236,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <p class="mt-6 leading-7 first:mt-0">
     The name “Pithagon” is derived from <code
       class="border-black border-opacity-[0.04] bg-opacity-[0.03] bg-black break-words rounded-md border py-0.5 px-[.25em] text-[.9em] dark:border-white/10 dark:bg-white/10"

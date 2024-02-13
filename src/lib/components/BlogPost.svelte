@@ -2,7 +2,7 @@
   import BannerImage from "$lib/components/BannerImage.svelte";
   import SEO from "$lib/components/SEO/index.svelte";
 
-  export let imageData;
+  // export let imageData;
   export let post;
 
   const {
@@ -14,12 +14,12 @@
     slug,
     timeToRead,
   } = post;
-  const {
-    ogImage,
-    ogSquareImage,
-    src: featuredImage,
-    twitterImage,
-  } = imageData;
+  // const {
+  //   ogImage,
+  //   ogSquareImage,
+  //   src: featuredImage,
+  //   twitterImage,
+  // } = imageData;
 
   const breadcrumbs = [
     {
@@ -59,7 +59,7 @@
     : null;
 </script>
 
-<SEO
+<!-- <SEO
   article
   {breadcrumbs}
   {slug}
@@ -72,7 +72,7 @@
   ogImage={ogImageObject}
   ogSquareImage={ogSquareImageObject}
   twitterImage={twitterImageObject}
-/>
+/> -->
 
-<BannerImage {imageData} />
+<!-- <BannerImage {imageData} /> -->
 <h1>{title}</h1>

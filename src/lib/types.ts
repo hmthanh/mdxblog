@@ -1,14 +1,16 @@
-interface IPost {
+interface IPostMeta {
   postTitle: string
   focusKeyphrase: string | undefined
-  datePublished: string
-  lastUpdated: string
-  seoMetaDescription: string
-  featuredImage: string
-  featuredImageAlt: string
-  ogImage: string
-  ogSquareImage: string
-  twitterImage: string
-  categories: string
+  datePublished: string | undefined
+  lastUpdated: string | undefined
+  seoMetaDescription: string | undefined
+  featuredImage: string | undefined
+  featuredImageAlt: string | undefined
+  ogImage: string | undefined
+  ogSquareImage: string | undefined
+  twitterImage: string | undefined
+  categories: string[] | undefined
   tags: string[]
 }
+
+export type { IPostMeta }
