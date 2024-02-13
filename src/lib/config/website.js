@@ -9,20 +9,18 @@ import {
   PUBLIC_TIKTOK_USERNAME,
   PUBLIC_TWITTER_USERNAME,
   PUBLIC_TWITTER_USER_ID,
-  PUBLIC_WIRE_USERNAME,
-} from "$env/static/public";
+} from "$env/static/public"
 
-const facebookPageName = PUBLIC_FACEBOOK_PAGE;
-const facebookAuthorPageName = PUBLIC_FACEBOOK_AUTHOR_PAGE;
+const facebookPageName = PUBLIC_FACEBOOK_PAGE
+const facebookAuthorPageName = PUBLIC_FACEBOOK_AUTHOR_PAGE
 
 const website = {
-  author: "Rodney Johnson",
+  author: "Thanh Hoang-Minh",
   ogLanguage: "en_GB",
   siteLanguage: "en-GB",
-  siteTitle: "Pithagon",
-  siteShortTitle: "SvelteKit Blog",
-  description:
-    "SvelteKit MDsvex Blog Starter - starter code by Mdx Blog to help you get going on your next blog site",
+  siteTitle: "MillionScope",
+  siteShortTitle: "MillionScope Blog",
+  description: "MillionScope - Wonderful science in your hand",
   siteUrl: PUBLIC_SITE_URL,
   backgroundColor: "#1b4079",
   themeColor: "#d62828",
@@ -36,8 +34,7 @@ const website = {
   telegramUsername: PUBLIC_TELEGRAM_USERNAME,
   tiktokUsername: PUBLIC_TIKTOK_USERNAME,
   twitterUsername: PUBLIC_TWITTER_USERNAME,
-  twitterUserId: PUBLIC_TWITTER_USER_ID,
-  wireUsername: PUBLIC_WIRE_USERNAME,
-};
+  twitterUserId: PUBLIC_TWITTER_USER_ID
+}
 
-export { website as default };
+export { website as default }
