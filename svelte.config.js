@@ -22,7 +22,7 @@ const mdsvexOptions = {
       return `{@html \`${html}\`}` // html
     },
   },
-  remarkPlugins: [remarkUnwrapImages, remarkToc],
+  remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
   rehypePlugins: [rehypeKatex, rehypeSlug],
 }
 
