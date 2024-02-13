@@ -60,5 +60,4 @@ export async function load({ params, url }) {
     slug,
     page,
   }
-  // return {}
 }

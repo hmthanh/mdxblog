@@ -4,7 +4,7 @@
   import { goto } from "$app/navigation";
 
   export let postTitle;
-  export let datePublished;
+  export let datePublished = "";
   export let seoMetaDescription;
   export let slug;
 

@@ -7,14 +7,13 @@
   /** @type {import('./$types').PageData} */
   export let data
 
-  // const { page, post, imageData } = data
+  const { page, post, imageData } = data
 
-  // if (browser && !document.lazyloadInstance) {
-  //   document.lazyloadInstance = new lazyload()
-  // }
+  if (browser && !document.lazyloadInstance) {
+    document.lazyloadInstance = new lazyload()
+  }
 </script>
 
 <!-- <BlogPost {post} {imageData} /> -->
 
-<!-- <svelte:component this={page} /> -->
-<div>Hello</div>
+<svelte:component this={page} />

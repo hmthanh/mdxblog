@@ -19,4 +19,3 @@
 <!-- <BlogPost {post} /> -->
 
 <svelte:component this={page} />
-<!-- <div>222</div> -->

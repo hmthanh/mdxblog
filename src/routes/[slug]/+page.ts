@@ -7,58 +7,57 @@ export async function load({ params, url }) {
   // console.log("slug", slug)
   // console.log("pathname", pathname)
 
+  // ../../content/blog/${slug}/index.md
   const postPromise = import(`../../content/blog/${slug}/index.md`)
   // const postPromise = import(`../../content/blog/${slug}/index.md`)
   // const imageDataPromise = import(`../../lib/generated/posts/${pathname.slice(1)}.js`)
-  await postPromise.then((result) => {
-    // console.log(result)
-  }).catch((err) => {
-    
-  });
+  await postPromise
+    .then((result) => {
+      // console.log(result)
+    })
+    .catch((err) => {})
   // await postPromise.then((data) => {
   //   console.log("postPromise", JSON.stringify(data.default));
   //   console.log("postPromise", data.metadata);
   // })
 
-  // const [postResult, imageDataResult] = await Promise.all([postPromise, imageDataPromise])
+  const [postResult] = await Promise.all([postPromise])
   // console.log("postResult ", postResult)
-  // const { default: page, metadata } = postResult
+  const { default: page, metadata } = postResult
   // const { default: imageData } = imageDataResult
 
-  // if (!page) {
-  //   return {
-  //     status: 404,
-  //   }
-  // }
+  if (!page) {
+    return {
+      status: 404,
+    }
+  }
 
   // console.log("metadata", metadata);
-  // const {
-  //   datePublished,
-  //   featuredImage,
-  //   featuredImageAlt,
-  //   ogImage,
-  //   ogSquareImage,
-  //   postTitle,
-  //   seoMetaDescription,
-  //   twitterImage,
-  // } = metadata
+  const {
+    datePublished,
+    featuredImage,
+    featuredImageAlt,
+    ogImage,
+    ogSquareImage,
+    postTitle,
+    seoMetaDescription,
+    twitterImage,
+  } = metadata
 
-  // return {
-  //   post: {
-  //     datePublished,
-  //     featuredImage,
-  //     featuredImageAlt,
-  //     ogImage,
-  //     ogSquareImage,
-  //     postTitle,
-  //     seoMetaDescription,
-  //     timeToRead: "", //readingTime(page, 10), //Math.ceil(readingTime(page).minutes),
-  //     twitterImage,
-  //     slug,
-  //   },
-  //   slug,
-  //   imageData,
-  //   page,
-  // }
-  return {}
+  return {
+    post: {
+      datePublished,
+      featuredImage,
+      featuredImageAlt,
+      ogImage,
+      ogSquareImage,
+      postTitle,
+      seoMetaDescription,
+      timeToRead: "", //readingTime(page, 10), //Math.ceil(readingTime(page).minutes),
+      twitterImage,
+      slug,
+    },
+    slug,
+    page,
+  }
 }

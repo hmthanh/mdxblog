@@ -81,7 +81,7 @@
     photography yet, some of my enthusiasm will rub off onto you.
   </p>
 </Card>
-<BlogRoll {posts} /> -->
+ -->
 
 <main class="w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
   <h1 class="text-center text-4xl tracking-tighter font-extrabold md:text-5xl mt-8">Pithagon</h1>
@@ -237,6 +237,7 @@
       </div>
     </div>
   </div> -->
+  <!-- <BlogRoll {posts} /> -->
   <p class="mt-6 leading-7 first:mt-0">
     The name “Pithagon” is derived from <code
       class="border-black border-opacity-[0.04] bg-opacity-[0.03] bg-black break-words rounded-md border py-0.5 px-[.25em] text-[.9em] dark:border-white/10 dark:bg-white/10"
@@ -274,11 +275,11 @@
         >Get Started</a
       >
       ·
-      <a class="text-primary-600 underline decoration-from-font [text-underline-position:from-font]" href="/examples/"
+      <a class="text-primary-600 underline decoration-from-font [text-underline-position:from-font]" href="/"
         >Examples</a
       >
       ·
-      <a class="text-primary-600 underline decoration-from-font [text-underline-position:from-font]" href="/blog"
+      <a class="text-primary-600 underline decoration-from-font [text-underline-position:from-font]" href="/"
         >Blog</a
       >
       ·
@@ -548,6 +549,9 @@
       >discussions on GitHub<span class="sr-only select-none"> (opens in a new tab)</span>
     </a>!
   </p>
+
+  <a href="/best-medium-format-camera-for-starting-out">best-medium-format-camera-for-starting-out</a>
+  <a href="/hmthanh/best-medium-format-camera-for-starting-out">best-medium-format-camera-for-starting-out</a>
 </main>
 
 <style lang="css">
