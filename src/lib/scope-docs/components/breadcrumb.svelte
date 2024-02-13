@@ -13,7 +13,7 @@
     class="whitespace-nowrap transition-colors min-w-[24px] overflow-hidden text-ellipsis hover:text-gray-900 dark:hover:text-gray-100"
     title="Docs Theme"
   >
-    <a href="/docs/">Docs Theme</a>
+    <a href="/">Docs Theme</a>
   </div>
   <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-3.5 shrink-0">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

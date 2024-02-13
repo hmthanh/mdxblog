@@ -3,7 +3,7 @@
 </script>
 
 <!-- <header class="header-container">
-  <a aria-label="Jump to Home page" class="hover-jump" href="./"
+  <a aria-label="Jump to Home page" class="hover-jump" href="/"
     >
     <span class="logo">
       <CameraIcon width={96} />
@@ -13,10 +13,10 @@
   <nav class="nav">
     <ul>
       <li>
-        <a href="/.">Home</a>
+        <a href="/Home</a>
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <a href="/">Contact</a>
       </li>
     </ul>
   </nav>
@@ -50,16 +50,16 @@
     <a
       class="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 relative -ml-2 hidden whitespace-nowrap p-2 md:inline-block font-medium subpixel-antialiased"
       aria-current="true"
-      href="/docs"
+      href="/"
     >
       <span class="absolute inset-x-0 text-center">Documentation</span>
       <span class="invisible font-medium">Documentation</span>
     </a>
-    
+
     <a
       class="text-sm contrast-more:text-gray-700 contrast-more:dark:text-gray-100 relative -ml-2 hidden whitespace-nowrap p-2 md:inline-block text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
       aria-current="false"
-      href="/about"
+      href="/"
     >
       <span class="absolute inset-x-0 text-center">About</span>
       <span class="invisible font-medium">About</span>
@@ -105,6 +105,3 @@
     </button>
   </nav>
 </header>
-
-<style lang="scss">
-</style>

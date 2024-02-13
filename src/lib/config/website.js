@@ -19,7 +19,7 @@ const website = {
   author: "Rodney Johnson",
   ogLanguage: "en_GB",
   siteLanguage: "en-GB",
-  siteTitle: "SvelteKit Blog Mdx",
+  siteTitle: "Pithagon",
   siteShortTitle: "SvelteKit Blog",
   description:
     "SvelteKit MDsvex Blog Starter - starter code by Mdx Blog to help you get going on your next blog site",

@@ -1,7 +1,7 @@
 <script>
   import website from "$lib/config/website"
   const { contactEmail, facebookPageName, telegramUsername, twitterUserId, twitterUsername, wireUsername } = website
-  import SEO from "$lib/components/SEO/index.svelte"
+  // import SEO from "$lib/components/SEO/index.svelte"
   import { Sidebar, NavToc, BreadCrumb, NavLinks } from "scope-docs"
 
   let title = "Contact"
@@ -26,10 +26,10 @@
   }
 </script>
 
-<SEO {...seoProps} />
+<!-- <SEO {...seoProps} /> -->
 
 <div class="mx-auto flex max-w-[90rem]">
-  <div class="motion-reduce:transition-none [transition:background-color_1.5s_ease] bg-transparent"></div>
+  <!-- <div class="motion-reduce:transition-none [transition:background-color_1.5s_ease] bg-transparent"></div>
 
   <Sidebar />
   <NavToc />
@@ -91,7 +91,7 @@
       </p>
       <h3 class="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl">
         Fork the Template<a
-          href="#fork-the-template"
+          href="/"
           id="fork-the-template"
           class="subheading-anchor"
           aria-label="Permalink for this section"
@@ -112,7 +112,7 @@
         class="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-10 border-b pb-1 text-3xl border-neutral-200/70 contrast-more:border-neutral-400 dark:border-primary-100/10 contrast-more:dark:border-neutral-400"
       >
         Start as New Project<a
-          href="#start-as-new-project"
+          href="/"
           id="start-as-new-project"
           class="subheading-anchor"
           aria-label="Permalink for this section"
@@ -121,7 +121,7 @@
       </h2>
       <div class="nextra-steps ml-4 mb-12 border-l border-gray-200 pl-6 dark:border-neutral-800 [counter-reset:step]">
         <h3 class="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl">
-          Install<a href="#install" id="install" class="subheading-anchor" aria-label="Permalink for this section"> </a>
+          Install<a href="/" id="install" class="subheading-anchor" aria-label="Permalink for this section"> </a>
         </h3>
         <p class="mt-6 leading-7 first:mt-0">
           To create a Nextra Docs site manually, you have to install <strong>Next.js</strong>,
@@ -379,7 +379,7 @@
         </div>
         <h3 class="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl">
           Add Next.js Config<a
-            href="#add-nextjs-config"
+            href="/"
             id="add-nextjs-config"
             class="subheading-anchor"
             aria-label="Permalink for this section"
@@ -453,13 +453,13 @@
         <p class="mt-6 leading-7 first:mt-0">
           With the above configuration, Nextra can handle Markdown files in your Next.js project, with the specified
           theme. Other Nextra configurations can be found in
-          <a class="text-primary-600 underline decoration-from-font [text-underline-position:from-font]" href="/docs/"
+          <a class="text-primary-600 underline decoration-from-font [text-underline-position:from-font]" href="/"
             >Guide</a
           >.
         </p>
         <h3 class="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl">
           Create Docs Theme Config<a
-            href="#create-docs-theme-config"
+            href="/"
             id="create-docs-theme-config"
             class="subheading-anchor"
             aria-label="Permalink for this section"
@@ -532,13 +532,13 @@
         </div>
         <p class="mt-6 leading-7 first:mt-0">
           Full theme configurations can be found
-          <a class="text-primary-600 underline decoration-from-font [text-underline-position:from-font]" href="/docs/"
+          <a class="text-primary-600 underline decoration-from-font [text-underline-position:from-font]" href="/"
             >here</a
           >.
         </p>
         <h3 class="font-semibold tracking-tight text-slate-900 dark:text-slate-100 mt-8 text-2xl">
           Ready to Go!<a
-            href="#ready-to-go"
+            href="/"
             id="ready-to-go"
             class="subheading-anchor"
             aria-label="Permalink for this section"
@@ -633,7 +633,7 @@
       <div class="nextra-cards mt-4 gap-4 grid not-prose" style="--rows: 3;">
         <a
           class="nextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
-          href="/docs/"
+          href="/"
         >
           <span
             class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50 flex items-center"
@@ -656,7 +656,7 @@
         </a>
         <a
           class="nextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
-          href="/docs/"
+          href="/"
         >
           <span
             class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50 flex items-center"
@@ -679,7 +679,7 @@
         </a>
         <a
           class="nextra-card group flex flex-col justify-start overflow-hidden rounded-lg border border-gray-200 text-current no-underline dark:shadow-none hover:shadow-gray-100 dark:hover:shadow-none shadow-gray-100 active:shadow-sm active:shadow-gray-200 transition-all duration-200 hover:border-gray-300 bg-transparent shadow-sm dark:border-neutral-800 hover:bg-slate-50 hover:shadow-md dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
-          href="/docs/"
+          href="/"
         >
           <span
             class="flex font-semibold items-start gap-2 p-4 text-gray-700 hover:text-gray-900 dark:text-neutral-200 dark:hover:text-neutral-50 flex items-center"
@@ -707,7 +707,7 @@
 
       <NavLinks />
     </main>
-  </article>
+  </article> -->
 </div>
 
 <style lang="css"></style>
