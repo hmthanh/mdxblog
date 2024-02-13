@@ -14,6 +14,6 @@
   }
 </script>
 
-<!-- <BlogPost {post} {imageData} /> -->
+<BlogPost {post} />
 
 <svelte:component this={page} />

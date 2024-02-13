@@ -32,31 +32,31 @@
     },
   ];
   
-  const featuredImageObject = {
-    url: featuredImage,
-    alt: featuredImageAlt,
-    width: 672,
-    height: 448,
-    caption: title,
-  };
-  const ogImageObject = ogImage
-    ? {
-        url: ogImage,
-        alt: featuredImageAlt,
-      }
-    : null;
-  const ogSquareImageObject = ogSquareImage
-    ? {
-        url: ogSquareImage,
-        alt: featuredImageAlt,
-      }
-    : null;
-  const twitterImageObject = twitterImage
-    ? {
-        url: twitterImage,
-        alt: featuredImageAlt,
-      }
-    : null;
+  // const featuredImageObject = {
+  //   url: featuredImage,
+  //   alt: featuredImageAlt,
+  //   width: 672,
+  //   height: 448,
+  //   caption: title,
+  // };
+  // const ogImageObject = ogImage
+  //   ? {
+  //       url: ogImage,
+  //       alt: featuredImageAlt,
+  //     }
+  //   : null;
+  // const ogSquareImageObject = ogSquareImage
+  //   ? {
+  //       url: ogSquareImage,
+  //       alt: featuredImageAlt,
+  //     }
+  //   : null;
+  // const twitterImageObject = twitterImage
+  //   ? {
+  //       url: twitterImage,
+  //       alt: featuredImageAlt,
+  //     }
+  //   : null;
 </script>
 
 <!-- <SEO
@@ -75,4 +75,4 @@
 /> -->
 
 <!-- <BannerImage {imageData} /> -->
-<h1>{title}</h1>
+<h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{title}</h1>
