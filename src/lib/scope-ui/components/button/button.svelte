@@ -1,19 +1,17 @@
 <script>
-  export let className = ""
+  import cn from "clsx"
+  let _class
+  export { _class as class }
 </script>
 
-<button class="button {className}" on:click on:keydown {...$$restProps}>
+<button
+  class={cn(
+    "nextra-button nx-transition-all active:nx-opacity-50",
+    "nx-bg-primary-700/5 nx-border nx-border-black/5 nx-text-gray-600 hover:nx-text-gray-900 nx-rounded-md nx-p-1.5",
+    "dark:nx-bg-primary-300/10 dark:nx-border-white/10 dark:nx-text-gray-400 dark:hover:nx-text-gray-50",
+    _class
+  )}
+  {...$$restProps}
+>
   <slot />
 </button>
-
-<style>
-  .button {
-    @apply transition-all active:opacity-50 rounded-md p-1.5;
-
-    @apply bg-primary-700/5 border border-black/5 text-gray-600 hover:text-gray-900;
-
-    @media (prefers-color-scheme: dark) {
-      @apply bg-primary-300/10 border-white/10 text-gray-400 hover:text-gray-50;
-    }
-  }
-</style>

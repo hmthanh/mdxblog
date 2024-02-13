@@ -2,11 +2,11 @@
 import type { ComponentProps } from 'react'
 
 export const Table = ({
-  className = '',
+  class = '',
   ...props
 }: ComponentProps<'table'>) => (
   <table
-    className={cn('block overflow-x-scroll', className)}
+    class={cn('block overflow-x-scroll', class)}
     {...props}
   />
 ) -->
@@ -14,8 +14,8 @@ export const Table = ({
 <script>
   import clsx from "clsx"
 
-  export let className = ""
-  export let props = {}
+  let _class = ""
+  export { _class as class }
 </script>
 
-<table class={clsx("block overflow-x-scroll", className)} {...props} />
+<table class={clsx("block overflow-x-scroll", _class)} {...$$restProps}><slot /></table>
