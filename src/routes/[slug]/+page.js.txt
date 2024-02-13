@@ -4,6 +4,8 @@
 export async function load({ params, url }) {
   const { slug } = params
   const { pathname } = url
+  console.log("slug", slug)
+  console.log("pathname", pathname)
 
   // const postPromise = import(`../../content/blog/${slug}/index.md`)
   // const imageDataPromise = import(`../../lib/generated/posts/${pathname.slice(1)}.js`)
@@ -52,5 +54,5 @@ export async function load({ params, url }) {
   //   imageData,
   //   page,
   // }
-  return {};
+  return {}
 }

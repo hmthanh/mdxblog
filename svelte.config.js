@@ -3,7 +3,10 @@ import adapter from "@sveltejs/adapter-static"
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte"
 import { escapeSvelte, mdsvex } from "mdsvex"
 import { getHighlighter } from "shiki"
-import remarkToc from "remark-toc";
+import remarkToc from "remark-toc"
+import rehypeKatex from "rehype-katex"
+import rehypeSlug from "rehype-slug"
+import remarkUnwrapImages from "remark-unwrap-images"
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
@@ -19,6 +22,8 @@ const mdsvexOptions = {
       return `{@html \`${html}\`}` // html
     },
   },
+  remarkPlugins: [remarkUnwrapImages, remarkToc],
+  rehypePlugins: [rehypeKatex, rehypeSlug],
 }
 
 const config = {
