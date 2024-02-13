@@ -237,7 +237,7 @@
       </div>
     </div>
   </div> -->
-  <!-- <BlogRoll {posts} /> -->
+  <BlogRoll {posts} />
   <p class="mt-6 leading-7 first:mt-0">
     The name “Pithagon” is derived from <code
       class="border-black border-opacity-[0.04] bg-opacity-[0.03] bg-black break-words rounded-md border py-0.5 px-[.25em] text-[.9em] dark:border-white/10 dark:bg-white/10"

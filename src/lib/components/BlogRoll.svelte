@@ -15,7 +15,6 @@
 </script>
 
 <section role="feed">
-  <h2>BLOG POSTS</h2>
   {#each displayPosts as post, index}
     <article aria-posinset={index + 1} aria-setsize={postCount}>
       <BlogPostSummary
