@@ -4,7 +4,7 @@
 
   export let getValue
 
-  let isCopied = false
+  export let isCopied = false
   let timeout
 
   const copyToClipboard = async () => {
@@ -35,7 +35,8 @@
   })
 </script>
 
-<button use:forwardEvents on:click={copyToClipboard} title="Copy code" tabindex="0">
+<!-- use:forwardEvents -->
+<button  on:click={copyToClipboard} title="Copy code" tabindex="0" {...$$restProps}>
   {#if isCopied}
     <CheckIcon class="pointer-events-none h-4 w-4" />
   {:else}
