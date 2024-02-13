@@ -13,7 +13,7 @@
   let config
 </script>
 
-<p class="text-center">
+<p class="text-center ">
   <!-- <Anchor
     href={getGitIssueUrl({
       repository: config.docsRepositoryBase,

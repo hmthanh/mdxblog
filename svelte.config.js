@@ -24,6 +24,9 @@ const mdsvexOptions = {
   },
   remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
   rehypePlugins: [rehypeKatex, rehypeSlug],
+  layout: {
+    blog: "./src/lib/layout/blog.svelte",
+  },
 }
 
 const config = {

@@ -3,6 +3,8 @@
   export let tag // Tag
   export let context
   export let id
+
+  // let observer = useIntersectionObserver()
   let _class
   export { _class as class }
 

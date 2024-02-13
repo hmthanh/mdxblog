@@ -17,3 +17,16 @@
 <BlogPost {post} />
 
 <svelte:component this={page} />
+
+<style lang="css">
+  h1 {
+    @apply bg-blue-500 text-blue-500
+  }
+
+  h2 {
+    @apply bg-blue-500 text-blue-500
+  }
+  h3 {
+    @apply bg-blue-500 text-blue-500
+  }
+</style>

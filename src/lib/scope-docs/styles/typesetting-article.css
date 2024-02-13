@@ -13,9 +13,6 @@ article.nextra-body-typesetting-article {
   a {
     @apply no-underline hover:underline;
   }
-  p {
-    @apply leading-8;
-  }
   code {
     @apply border-none dark:bg-neutral-700;
   }
