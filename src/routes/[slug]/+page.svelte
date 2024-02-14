@@ -14,7 +14,7 @@
   }
 </script>
 
-<BlogPost {post} />
+<!-- <BlogPost {post} /> -->
 
 <svelte:component this={page} />
 
