@@ -4,7 +4,7 @@
   import lazyload from "vanilla-lazyload"
   import { ArrowRightIcon } from "scope-docs"
 
-  /** @type {import('./$types').PageData} */
+  /** @type {impsort('./$types').PageData} */
   export let data
 
   const { page, post, imageData } = data
@@ -17,16 +17,3 @@
 <!-- <BlogPost {post} /> -->
 
 <svelte:component this={page} />
-
-<style lang="css">
-  h1 {
-    @apply bg-blue-500 text-blue-500
-  }
-
-  h2 {
-    @apply bg-blue-500 text-blue-500
-  }
-  h3 {
-    @apply bg-blue-500 text-blue-500
-  }
-</style>
