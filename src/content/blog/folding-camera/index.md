@@ -19,6 +19,132 @@ tags: ""
 
 ## What is a Folding Camera?
 
+### Highlighting Lines
+
+You can highlight specific lines of code by adding a `{}` attribute to the code
+block:
+
+````md filename="Markdown"
+```js {1,4-5}
+import { useState } from "react"
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+````
+
+Result:
+
+```js {1,4-5}
+import { useState } from "react"
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+
+### Highlighting Substrings
+
+You can highlight specific substrings of code by adding a `//` attribute to the
+code block:
+
+````md filename="Markdown"
+```js /useState/
+import { useState } from "react"
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+````
+
+```js /useState/
+import { useState } from "react"
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+
+You can highlight only a part of the occurrences of that substring by adding a
+number it: `/str/1`, or multiple: `/str/1-3`, `/str/1,3`.
+
+### Copy Button
+
+By adding a `copy` attribute, a copy button will be added to the code block when
+the user hovers over it:
+
+````md filename="Markdown"
+```js copy
+console.log("hello, world")
+```
+````
+
+Renders:
+
+```js copy
+console.log("hello, world")
+```
+
+You can enable this feature globally by setting `defaultShowCopyCode: true` in
+your Nextra configuration (`next.config.js` file). Once it's enabled globally,
+you can disable it via the `copy=false` attribute.
+
+### Line Numbers
+
+You can add line numbers to your code blocks by adding a `showLineNumbers`
+attribute:
+
+````md filename="Markdown"
+```js showLineNumbers
+import { useState } from "react"
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+````
+
+Renders:
+
+```js showLineNumbers
+import { useState } from "react"
+
+function Counter() {
+  const [count, setCount] = useState(0)
+  return <button onClick={() => setCount(count + 1)}>{count}</button>
+}
+```
+
+### Filenames and Titles
+
+You can add a filename or a title to your code blocks by adding a `filename`
+attribute:
+
+````md filename="Markdown"
+```js filename="example.js"
+console.log("hello, world")
+```
+````
+
+Renders:
+
+```js filename="example.js"
+console.log("hello, world")
+```
+
+## Supported Languages
+
+Check [this list](https://github.com/shikijs/shiki/blob/main/docs/languages.md)
+for all supported languages.
+
+
 Folding cameras are a well-kept secret. Typically, the optics are amazing, in fact often better than modern mirrorless and high end DSLR lenses. This is related to the physics, put simply, it is easier to make a good small lens than a large one. On top, they are compact, something like the Agfa Isolette can fit into a pocket (they are expensive and quite old cameras, so a padded camera bag would be safer!). One drawback is that you cannot usually swap lenses. If you want a halfway-house, try the Mamiya 6. It has a wide angle, normal and telephoto lens, though it does not collapse to as flat a profile as the Isolette.
 
 ## Why shoot a Folding Camera?
