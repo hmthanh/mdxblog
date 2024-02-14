@@ -5,6 +5,6 @@
   export { _class as class }
 </script>
 
-<li class={cn("my-2", _class)} {...$$restProps}>
+<ol class={cn("mt-6 list-decimal first:mt-0 ltr:ml-6 rtl:mr-6", _class)} {...$$restProps}>
   <slot />
-</li>
+</ol>

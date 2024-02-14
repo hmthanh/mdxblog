@@ -47,6 +47,12 @@
   )
 }) -->
 
-<a {href} {...$$restProps}>
-  <slot />
-</a>
+{#if href}
+  <a {href} {...$$restProps}>
+    <slot />
+  </a>
+{:else}
+  <a {...$$restProps}>
+    <slot />
+  </a>
+{/if}
