@@ -1,5 +1,6 @@
 <script>
-  export let href
+  export let href = ""
+  export let newWindow
 </script>
 
 <!-- export const Anchor = forwardRef(function (
@@ -47,12 +48,13 @@
   )
 }) -->
 
-{#if href}
-  <a {href} {...$$restProps}>
+{#if newWindow}
+  <a {href} target="_blank" rel="noreferrer" {...$$restProps}>
     <slot />
+    <span class="sr-only select-none"> (opens in a new tab)</span>
   </a>
 {:else}
-  <a {...$$restProps}>
+  <a {href} {...$$restProps}>
     <slot />
   </a>
 {/if}
