@@ -5,7 +5,7 @@
   export let id
 
   // let observer = useIntersectionObserver()
-  let _class
+  let _class = ''
   export { _class as class }
 
   // const setActiveAnchor = useSetActiveAnchor()

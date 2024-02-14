@@ -4,7 +4,7 @@
   import MenuButton from "scope-docs/components/menu/menubutton.svelte"
 
   // export let menu
-  let _class
+  let _class = ''
   export { _class as class }
 
   let menu

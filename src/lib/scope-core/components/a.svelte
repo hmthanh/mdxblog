@@ -2,7 +2,7 @@
   import Anchor from "$lib/scope-docs/components"
   import cn from "clsx"
 
-  let _class
+  let _class = ''
   export { _class as class }
 
   export let href = ""

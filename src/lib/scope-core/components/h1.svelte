@@ -1,6 +1,6 @@
 <script>
   import cn from "clsx"
-  let _class
+  let _class = ''
   export { _class as class }
 </script>
 

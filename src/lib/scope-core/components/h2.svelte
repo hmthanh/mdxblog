@@ -2,7 +2,7 @@
   import cn from "clsx"
 
   export let id
-  let _class
+  let _class = ''
   export { _class as class }
 </script>
 

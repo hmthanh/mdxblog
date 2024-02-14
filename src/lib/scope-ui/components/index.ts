@@ -8,7 +8,7 @@ export { default as CopyToClipBoard } from "./copytoclipboard/copy-to-clipboard.
 export { default as Navbar } from "./navbar/navbar.svelte"
 export { default as NotFoundPage } from "./notfoundpage/notfoundpage.svelte"
 export { default as Sidebar } from "./sidebar/sidebar.svelte"
-export { default as Table } from "./table/table.svelte"
+export { default as Table } from "../../scope-core/components/table/table.svelte"
 
 export * from "./listbox"
 export * from "./menu"

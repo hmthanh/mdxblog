@@ -2,7 +2,7 @@
   import cn from "clsx"
   //     import type { ReactElement, ReactNode } from 'react'
   // import { useEffect, useRef } from 'react'
-  let _class
+  let _class = ''
   export { _class as class }
 
   export let isOpen
