@@ -1,6 +1,8 @@
 // import path from 'node:path'
 // import type { NextraConfig } from './types'
 
+import { dev } from "$app/environment"
+
 // imports
 // import path from "path"
 
@@ -34,6 +36,8 @@ export const CODE_BLOCK_FILENAME_REGEX = /filename="([^"]+)"/
 
 // config
 export let isProduction = false
+
+export let IS_PRODUCTION = dev ? false : true
 
 export let defaultLocale = "en-US"
 

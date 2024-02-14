@@ -1,31 +1,32 @@
 import type { ProcessorOptions } from "@mdx-js/mdx"
-// import type { GrayMatterFile } from "gray-matter"
-// import type { Heading as MDASTHeading } from "remark"
+import type { GrayMatterFile } from "gray-matter"
+import type { Heading as MDASTHeading } from "mdast"
 // import type { NextConfig } from "next"
 // import type { FC, ReactNode } from "react"
-// import type { Options as RehypePrettyCodeOptions } from "rehype-pretty-code"
+import type { Options as RehypePrettyCodeOptions } from "rehype-pretty-code"
 // import type { MARKDOWN_EXTENSIONS, META_FILENAME, NEXTRA_INTERNAL } from "./constants"
-// import type { PageMapCache } from "./page-map"
+import type { PageMapCache } from "./page-map"
 import { MARKDOWN_EXTENSIONS, META_FILENAME, NEXTRA_INTERNAL } from "./constant"
 
 type MetaFilename = typeof META_FILENAME
 type MarkdownExtension = (typeof MARKDOWN_EXTENSIONS)[number]
 
-// export interface LoaderOptions extends NextraConfig {
-//   isMetaImport?: boolean
-//   isPageImport?: boolean
-//   locales: string[]
-//   defaultLocale: string
-//   pageMapCache: PageMapCache
-//   newNextLinkBehavior?: boolean
-// }
+// extends NextraConfig
+export interface LoaderOptions {
+  isMetaImport?: boolean
+  isPageImport?: boolean
+  locales: string[]
+  defaultLocale: string
+  pageMapCache: PageMapCache
+  newNextLinkBehavior?: boolean
+}
 
-// export interface Folder<FileType = PageMapItem> {
-//   kind: "Folder"
-//   name: string
-//   route: string
-//   children: FileType[]
-// }
+export interface Folder<FileType = PageMapItem> {
+  kind: "Folder"
+  name: string
+  route: string
+  children: FileType[]
+}
 
 export type MetaJsonFile = {
   kind: "Meta"
@@ -53,51 +54,51 @@ export type DynamicMetaJsonFile = {
   data: DynamicMeta
 }
 
-// export type FrontMatter = GrayMatterFile<string>["data"]
+export type FrontMatter = GrayMatterFile<string>["data"]
 export type Meta = string | Record<string, any>
 
-// export type MdxFile<FrontMatterType = FrontMatter> = {
-//   kind: "MdxPage"
-//   name: string
-//   route: string
-//   locale?: string
-//   frontMatter?: FrontMatterType
-// }
+export type MdxFile<FrontMatterType = FrontMatter> = {
+  kind: "MdxPage"
+  name: string
+  route: string
+  locale?: string
+  frontMatter?: FrontMatterType
+}
 
 export type MetaJsonPath = `${string}/${MetaFilename}`
 export type MdxPath = `${string}.${MarkdownExtension}`
 
-// export type FileMap = {
-//   [jsonPath: MetaJsonPath]: MetaJsonFile
-//   [mdxPath: MdxPath]: MdxFile
-// }
+export type FileMap = {
+  [jsonPath: MetaJsonPath]: MetaJsonFile
+  [mdxPath: MdxPath]: MdxFile
+}
 
-// export type PageMapItem = Folder | MdxFile | MetaJsonFile
+export type PageMapItem = Folder | MdxFile | MetaJsonFile
 
 // PageMapItem without MetaJsonFile and with its meta from _meta.json
-// export type Page = (MdxFile | Folder<Page>) & {
-//   meta?: Exclude<Meta, string>
-// }
+export type Page = (MdxFile | Folder<Page>) & {
+  meta?: Exclude<Meta, string>
+}
 
-// export type Heading = {
-//   depth: MDASTHeading["depth"]
-//   value: string
-//   id: string
-// }
+export type Heading = {
+  depth: MDASTHeading["depth"]
+  value: string
+  id: string
+}
 
-// export type PageOpts<FrontMatterType = FrontMatter> = {
-//   filePath: string
-//   route: string
-//   frontMatter: FrontMatterType
-//   pageMap: PageMapItem[]
-//   title: string
-//   headings: Heading[]
-//   hasJsxInH1?: boolean
-//   timestamp?: number
-//   flexsearch?: Flexsearch
-//   newNextLinkBehavior?: boolean
-//   readingTime?: ReadingTime
-// }
+export type PageOpts<FrontMatterType = FrontMatter> = {
+  filePath: string
+  route: string
+  frontMatter: FrontMatterType
+  pageMap: PageMapItem[]
+  title: string
+  headings: Heading[]
+  hasJsxInH1?: boolean
+  timestamp?: number
+  flexsearch?: Flexsearch
+  newNextLinkBehavior?: boolean
+  readingTime?: ReadingTime
+}
 
 export type ReadingTime = {
   text: string

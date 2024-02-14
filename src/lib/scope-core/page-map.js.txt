@@ -1,4 +1,5 @@
-import { IS_PRODUCTION } from "./constants"
+// import { IS_PRODUCTION } from "./constants"
+import { browser, building, dev, version } from '$app/environment';
 import filterRouteLocale from "./filter-route-locale"
 
 export function getDynamicMeta(path, items, locale) {

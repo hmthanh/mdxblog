@@ -19,7 +19,8 @@ const mdsvexOptions = {
         langs: ["javascript"],
       })
       const html = escapeSvelte(highlighter.codeToHtml(code, { lang: "text", theme: "poimandres" }))
-      return `{@html \`${html}\`}` // html
+      // return `{@html \`${html}\`}` // html
+      return `{@html \`${html}\` }`
     },
   },
   remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
