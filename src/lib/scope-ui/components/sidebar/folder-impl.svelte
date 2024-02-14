@@ -1,3 +1,7 @@
+<script lang="ts">
+    
+    </script>
+
 <li className={cn({ open, active })}>
     <ComponentToUse
       href={isLink ? item.route : undefined}

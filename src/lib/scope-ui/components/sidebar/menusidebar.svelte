@@ -1,21 +1,31 @@
 <script lang="ts">
-export let directories
-export let anchors
-export let className
-export let onlyCurrentDocs
+	import cn from 'clsx';
+  let _class
+  export {_class as class}
 
+  import FolderMenu from "./folder.svelte"
+  import FileMenu from "./file.svelte"
+  export let directories
+  export let anchors
+  export let onlyCurrentDocs
+  let _class
+  export { _class as class }
 </script>
 
-
-<ul className={cn(classes.list, className)}>
-    {directories.map(item =>
-      !onlyCurrentDocs || item.isUnderCurrentDocsTree ? (
-        item.type === 'menu' ||
-        (item.children && (item.children.length || !item.withIndexPage)) ? (
-          <Folder key={item.name} item={item} anchors={anchors} />
-        ) : (
-          <File key={item.name} item={item} anchors={anchors} />
-        )
-      ) : null
-    )}
-  </ul>
+<ul
+  class={cn(
+    "flex rounded px-2 py-1.5 text-sm transition-colors [word-break:break-word]",
+    "cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border",
+    _class
+  )}
+>
+  {#each directories as item}
+    {#if !onlyCurrentDocs || item.isUnderCurrentDocsTree}
+      {#if item.type === "menu" || (item.children && (item.children.length || !item.withIndexPage))}
+        <FolderMenu key={item.name} {item} {anchors} />
+      {:else}
+        <FileMenu key={item.name} {item} {anchors} />
+      {/if}
+    {/if}
+  {/each}
+</ul>

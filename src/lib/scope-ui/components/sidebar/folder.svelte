@@ -1,4 +1,5 @@
 <script>
+	import Menusidebar from './menusidebar.svelte';
 	import { ArrowRightIcon } from 'scope-docs/icons';
 	import Collapse from 'scope-docs/components'
     import { getContext, setContext } from 'svelte'
@@ -100,7 +101,7 @@
     isOpen={open}
   >
     {#if Array.isArray(item.children)}
-      <Menu
+      <Menusidebar
         class="ltr:nx-ml-3 rtl:nx-mr-3"
         directories={item.children}
         base={item.route}

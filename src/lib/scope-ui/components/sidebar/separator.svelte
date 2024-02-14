@@ -1,18 +1,27 @@
+<script lang="ts">
+  import cn from "clsx"
+  let _class
+  export { _class as class }
+
+  export let title
+</script>
+
 <li
-      className={cn(
-        '[word-break:break-word]',
-        title
-          ? 'nx-mt-5 nx-mb-2 nx-px-2 nx-py-1.5 nx-text-sm nx-font-semibold nx-text-gray-900 first:nx-mt-0 dark:nx-text-gray-100'
-          : 'nx-my-4'
-      )}
-    >
-      {title ? (
-        renderComponent(config.sidebar.titleComponent, {
-          title,
-          type: 'separator',
-          route: ''
-        })
-      ) : (
-        <hr className="nx-mx-2 nx-border-t nx-border-gray-200 dark:nx-border-primary-100/10" />
-      )}
-    </li>
+  class={cn(
+    "[word-break:break-word]",
+    _class,
+    title ? "mt-5 mb-2 px-2 py-1.5 text-sm font-semibold text-gray-900 first:mt-0 dark:text-gray-100" : "my-4"
+  )}
+>
+  <hr class="mx-2 border-t border-gray-200 dark:border-primary-100/10" />
+</li>
+
+<!-- {#if title}
+    config.sidebar.titleComponent, {
+        title,
+        type: 'separator',
+        route: ''
+      })
+    {:else}
+    
+    {/if} -->
