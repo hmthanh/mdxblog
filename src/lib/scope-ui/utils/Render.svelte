@@ -87,5 +87,3 @@
     </svelte:component>
   {/if}
 {/if}
-<!-- use:forwardEvents -->
-<!-- use={[...use, forwardEvents]} -->

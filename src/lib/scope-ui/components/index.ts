@@ -1,6 +1,7 @@
 export { default as Anchor } from "./anchor/anchor.svelte"
 export { default as Button } from "./button/button.svelte"
 export { default as Callout } from "./callout/callout.svelte"
+export { default as Card } from "./cards/card.svelte"
 export { default as Cards } from "./cards/cards.svelte"
 export { default as Code } from "./code/code.svelte"
 export { default as CopyToClipBoard } from "./copytoclipboard/copy-to-clipboard.svelte"
