@@ -27,10 +27,10 @@ export const Code = ({
   import cn from "clsx"
 
   export let children
-  export let className
-  export let props = {}
+  let _class = ""
+  export { _class as class }
 
-  const hasLineNumbers = "data-line-numbers" in props
+  const hasLineNumbers = "data-line-numbers" in $$props
 </script>
 
 <code
@@ -38,10 +38,10 @@ export const Code = ({
     "border-black border-opacity-[0.04] bg-opacity-[0.03] bg-black break-words rounded-md border py-0.5 px-[.25em] text-[.9em]",
     "dark:border-white/10 dark:bg-white/10",
     hasLineNumbers && "[counter-reset:line]",
-    className
+    _class
   )}
   dir="ltr"
-  {...props}
+  {...$$restProps}
 >
   {@html children}
 </code>

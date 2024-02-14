@@ -56,6 +56,7 @@
   import { createEventDispatcher } from "svelte"
   import { CopyIcon, WordWrapIcon } from "scope-docs"
   import clsx from "clsx"
+  import {Button} from "scope-ui/components"
 
   export let hasCopyCode = false
   export let filename: string
@@ -66,6 +67,13 @@
 
   const toggleWordWrap = () => {
     // Define your toggleWordWrap logic here
+    const htmlDataset = document.documentElement.dataset
+    const hasWordWrap = "nextraWordWrap" in htmlDataset
+    if (hasWordWrap) {
+      delete htmlDataset.nextraWordWrap
+    } else {
+      htmlDataset.nextraWordWrap = ""
+    }
   }
 </script>
 
@@ -95,9 +103,9 @@
       filename ? "top-8" : "top-0"
     )}
   >
-    <button on:click={toggleWordWrap} class="md:hidden" title="Toggle word wrap">
+    <Button on:click={toggleWordWrap} class="md:hidden" title="Toggle word wrap">
       <WordWrapIcon class="pointer-events-none h-4 w-4" />
-    </button>
+    </Button>
     {#if hasCopyCode}
       <!-- <CopyIcon getValue={() => preRef.current?.querySelector("code")?.textContent || ""} /> -->
       <CopyIcon getValue={() => ""} />
