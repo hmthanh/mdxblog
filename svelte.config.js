@@ -38,22 +38,22 @@ const DEFAULT_REHYPE_PRETTY_CODE_OPTIONS = {
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
   extensions: [".svelte.md", ".md", ".svx"],
-  // highlight: {
-  //   highlighter: async (code, lang = "text") => {
-  //     const langs = ["javascript", "typescript", "js", "bash", "text", "json", "sh"]
+  highlight: {
+    highlighter: async (code, lang = "text") => {
+      const langs = ["javascript", "typescript", "js", "bash", "text", "json", "sh"]
 
-  //     // const highlighter = await getHighlighter({ themes: "poimandres" })
-  //     const highlighter = await getHighlighter({
-  //       themes: ["poimandres"],
-  //       langs: ["javascript", "typescript", "js", "bash", "text", "json", "sh", "md"],
-  //     })
-  //     await highlighter.loadLanguage("javascript", "typescript", "js", "bash", "text", "json", "sh", "md")
+      // const highlighter = await getHighlighter({ themes: "poimandres" })
+      const highlighter = await getHighlighter({
+        themes: ["poimandres"],
+        langs: ["javascript", "typescript", "js", "bash", "text", "json", "sh", "md"],
+      })
+      await highlighter.loadLanguage("javascript", "typescript", "js", "bash", "text", "json", "sh", "md")
 
-  //     const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: "poimandres" }))
-  //     // return `{@html \`${html}\`}` // html
-  //     return `{@html \`${html}\` }`
-  //   },
-  // },
+      const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme: "poimandres" }))
+      // return `{@html \`${html}\`}` // html
+      return `{@html \`${html}\` }`
+    },
+  },
   remarkPlugins: [remarkReadingTime, remarkUnwrapImages, remarkGfm, [remarkToc, { tight: true }]],
   rehypePlugins: [remarkMath, rehypeKatex, rehypeSlug, [rehypePrettyCode, { ...DEFAULT_REHYPE_PRETTY_CODE_OPTIONS }]],
   layout: {
