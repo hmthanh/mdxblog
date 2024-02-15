@@ -46,7 +46,8 @@
   export const fullDirectories = []
   export const asPopover: any | undefined = false
   export const headings = []
-  export const includePlaceholder = []
+  export let includePlaceholder = false
+  export const open = false
 </script>
 
 <aside

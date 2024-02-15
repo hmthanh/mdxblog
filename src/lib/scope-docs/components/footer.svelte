@@ -6,7 +6,6 @@
 
   // export function Footer({ menu }: { menu?: boolean }): ReactElement {
   export const menu: boolean = false
-  export const hideSidebar = false
   // const config = useConfig()
 </script>
 

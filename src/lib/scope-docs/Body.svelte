@@ -16,7 +16,7 @@
 
   export let themeContext = { layout: "full", typesetting: "article" }
   export const breadcrumb = {}
-  export const timestamp = 0
+  export let timestamp = 0
   export const navigation = {}
   let flatDocsDirectories
   let activeIndex

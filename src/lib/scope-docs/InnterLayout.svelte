@@ -29,6 +29,7 @@
   let directories = []
   let hideSidebar = false
   let topLevelNavbarItems = []
+  let menu = false
   // const {
   //   activeType,
   //   activeIndex,
@@ -133,7 +134,7 @@
     <!-- </ActiveAnchorProvider> -->
   </div>
   <!-- hideSidebar -->
-  <Footer {hideSidebar} />
+  <Footer {menu} />
   <!-- {themeContext.footer &&
       renderComponent(config.footer.component, { menu: hideSidebar })} -->
 </div>
