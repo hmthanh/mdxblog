@@ -9,24 +9,24 @@
 
   const classes = {
   link: cn(
-    'nx-flex nx-rounded nx-px-2 nx-py-1.5 nx-text-sm nx-transition-colors [word-break:break-word]',
-    'nx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:nx-border'
+    'flex rounded px-2 py-1.5 text-sm transition-colors [word-break:break-word]',
+    'cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:border'
   ),
   inactive: cn(
-    'nx-text-gray-500 hover:nx-bg-gray-100 hover:nx-text-gray-900',
-    'dark:nx-text-neutral-400 dark:hover:nx-bg-primary-100/5 dark:hover:nx-text-gray-50',
-    'contrast-more:nx-text-gray-900 contrast-more:dark:nx-text-gray-50',
-    'contrast-more:nx-border-transparent contrast-more:hover:nx-border-gray-900 contrast-more:dark:hover:nx-border-gray-50'
+    'text-gray-500 hover:bg-gray-100 hover:text-gray-900',
+    'dark:text-neutral-400 dark:hover:bg-primary-100/5 dark:hover:text-gray-50',
+    'contrast-more:text-gray-900 contrast-more:dark:text-gray-50',
+    'contrast-more:border-transparent contrast-more:hover:border-gray-900 contrast-more:dark:hover:border-gray-50'
   ),
   active: cn(
-    'nx-bg-primary-100 nx-font-semibold nx-text-primary-800 dark:nx-bg-primary-400/10 dark:nx-text-primary-600',
-    'contrast-more:nx-border-primary-500 contrast-more:dark:nx-border-primary-500'
+    'bg-primary-100 font-semibold text-primary-800 dark:bg-primary-400/10 dark:text-primary-600',
+    'contrast-more:border-primary-500 contrast-more:dark:border-primary-500'
   ),
-  list: cn('nx-flex nx-flex-col nx-gap-1'),
+  list: cn('flex flex-col gap-1'),
   border: cn(
-    'nx-relative before:nx-absolute before:nx-inset-y-1',
-    'before:nx-w-px before:nx-bg-gray-200 before:nx-content-[""] dark:before:nx-bg-neutral-800',
-    'ltr:nx-pl-3 ltr:before:nx-left-0 rtl:nx-pr-3 rtl:before:nx-right-0'
+    'relative before:absolute before:inset-y-1',
+    'before:w-px before:bg-gray-200 before:content-[""] dark:before:bg-neutral-800',
+    'ltr:pl-3 ltr:before:left-0 rtl:pr-3 rtl:before:right-0'
   )
 }
 
@@ -66,7 +66,7 @@ const active = item.route && [route, route + '/'].includes(item.route + '/');
         class={cn(
           classes.list,
           classes.border,
-          'ltr:nx-ml-3 rtl:nx-mr-3'
+          'ltr:ml-3 rtl:mr-3'
         )}
       >
         {anchors.map(({ id, value }) => (
@@ -75,7 +75,7 @@ const active = item.route && [route, route + '/'].includes(item.route + '/');
               href={`#${id}`}
               class={cn(
                 classes.link,
-                'nx-flex nx-gap-2 before:nx-opacity-25 before:nx-content-["#"]',
+                'flex gap-2 before:opacity-25 before:content-["#"]',
                 activeAnchor[id]?.isActive ? classes.active : classes.inactive
               )}
               onClick={() => {

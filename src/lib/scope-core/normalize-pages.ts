@@ -1,5 +1,6 @@
 import { z } from "zod"
 import { ERROR_ROUTES } from "./constant"
+import type { Folder, MdxFile } from "./types"
 
 // import { ERROR_ROUTES } from "./constants.js"
 
@@ -43,19 +44,19 @@ const titleSchema = z.string()
 const linkItemSchema = z.strictObject({
   href: z.string(),
   newWindow: z.boolean(),
-  title: titleSchema
+  title: titleSchema,
 })
 
 const menuItemSchema = z.strictObject({
   display: displaySchema.optional(),
   items: z.record(linkItemSchema.partial({ href: true, newWindow: true })),
   title: titleSchema,
-  type: z.literal('menu')
+  type: z.literal("menu"),
 })
 
 const separatorItemSchema = z.strictObject({
   title: titleSchema.optional(),
-  type: z.literal('separator')
+  type: z.literal("separator"),
 })
 
 const itemSchema = linkItemSchema
@@ -63,77 +64,71 @@ const itemSchema = linkItemSchema
     display: displaySchema,
     theme: pageThemeSchema,
     title: titleSchema,
-    type: z.enum(['page', 'doc'])
+    type: z.enum(["page", "doc"]),
   })
   .deepPartial()
 
 type Display = z.infer<typeof displaySchema>
 type IMenuItem = z.infer<typeof menuItemSchema>
 
-export const metaSchema = z
-  .string()
-  .or(menuItemSchema)
-  .or(separatorItemSchema)
-  .or(itemSchema)
+export const metaSchema = z.string().or(menuItemSchema).or(separatorItemSchema).or(itemSchema)
 
-function extendMeta(
-  meta: string | Record<string, any> = {},
-  fallback: Record<string, any>
-) {
-  if (typeof meta === 'string') {
+function extendMeta(meta: string | Record<string, any> = {}, fallback: Record<string, any>) {
+  if (typeof meta === "string") {
     meta = { title: meta }
   }
   const theme: PageTheme = Object.assign({}, fallback.theme, meta.theme)
   return Object.assign({}, fallback, meta, { theme })
 }
 
-// type FolderWithoutChildren = Folder ;//Omit<Folder, 'children'>
+// Folder
+type FolderWithoutChildren = Omit<Folder, "children">
 
-// export type Item = (MdxFile | FolderWithoutChildren) & {
-//   title: string
-//   type: string
-//   children?: Item[]
-//   display?: Display
-//   withIndexPage?: boolean
-//   theme?: PageTheme
-//   isUnderCurrentDocsTree?: boolean
-// }
+export type Item = (MdxFile | FolderWithoutChildren) & {
+  title: string
+  type: string
+  children?: Item[]
+  display?: Display
+  withIndexPage?: boolean
+  theme?: PageTheme
+  isUnderCurrentDocsTree?: boolean
+}
 
-// export type PageItem = (MdxFile | FolderWithoutChildren) & {
-//   title: string
-//   type: string
-//   href?: string
-//   newWindow?: boolean
-//   children?: PageItem[]
-//   firstChildRoute?: string
-//   display?: Display
-//   withIndexPage?: boolean
-//   isUnderCurrentDocsTree?: boolean
-// }
+export type PageItem = (MdxFile | FolderWithoutChildren) & {
+  title: string
+  type: string
+  href?: string
+  newWindow?: boolean
+  children?: PageItem[]
+  firstChildRoute?: string
+  display?: Display
+  withIndexPage?: boolean
+  isUnderCurrentDocsTree?: boolean
+}
 
-// export type MenuItem = (MdxFile | FolderWithoutChildren) &
-//   IMenuItem & {
-//     children?: PageItem[]
-//   }
+export type MenuItem = (MdxFile | FolderWithoutChildren) &
+  IMenuItem & {
+    children?: PageItem[]
+  }
 
-// type DocsItem = (MdxFile | FolderWithoutChildren) & {
-//   title: string
-//   type: string
-//   children?: DocsItem[]
-//   firstChildRoute?: string
-//   withIndexPage?: boolean
-//   isUnderCurrentDocsTree?: boolean
-// }
+type DocsItem = (MdxFile | FolderWithoutChildren) & {
+  title: string
+  type: string
+  children?: DocsItem[]
+  firstChildRoute?: string
+  withIndexPage?: boolean
+  isUnderCurrentDocsTree?: boolean
+}
 
-// function findFirstRoute(items: DocsItem[]): string | undefined {
-//   for (const item of items) {
-//     if (item.route) return item.route
-//     if (item.children) {
-//       const route = findFirstRoute(item.children)
-//       if (route) return route
-//     }
-//   }
-// }
+function findFirstRoute(items: DocsItem[]): string | undefined {
+  for (const item of items) {
+    if (item.route) return item.route
+    if (item.children) {
+      const route = findFirstRoute(item.children)
+      if (route) return route
+    }
+  }
+}
 
 // export function normalizePages({
 //   list,

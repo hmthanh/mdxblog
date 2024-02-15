@@ -56,7 +56,7 @@
   import { createEventDispatcher } from "svelte"
   import { CopyIcon, WordWrapIcon } from "scope-docs"
   import clsx from "clsx"
-  import {Button} from "scope-ui/components"
+  import { Button } from "scope-ui/components"
 
   export let hasCopyCode = false
   export let filename: string
@@ -76,8 +76,6 @@
     }
   }
 </script>
-
-<table class={clsx("block overflow-x-scroll", _class)} {...$$restProps}><slot /></table>
 
 <div class="nextra-code-block relative mt-6 {filename ? 'mt-0' : ''}">
   {#if filename}
@@ -107,8 +105,8 @@
       <WordWrapIcon class="pointer-events-none h-4 w-4" />
     </Button>
     {#if hasCopyCode}
-      <!-- <CopyIcon getValue={() => preRef.current?.querySelector("code")?.textContent || ""} /> -->
       <CopyIcon getValue={() => ""} />
     {/if}
   </div>
 </div>
+<!-- <CopyIcon getValue={() => preRef.current?.querySelector("code")?.textContent || ""} /> -->
