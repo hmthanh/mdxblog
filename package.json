@@ -92,6 +92,7 @@
     "slash": "^5.1.0",
     "svelte-headlessui": "^0.0.33",
     "title": "^3.5.3",
+    "unist-util-remove": "^4.0.0",
     "zod": "^3.22.4"
   }
 }
