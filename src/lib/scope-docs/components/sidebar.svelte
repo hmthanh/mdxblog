@@ -330,7 +330,10 @@
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M9 5l7 7-7 7"
-                  class="origin-center transition-transform rtl:-rotate-180 ltr:rotate-90 rtl:rotate-[-270deg]"
+                  class={cn(
+                    "origin-center transition-transform rtl:-rotate-180 ",
+                    open && "ltr:rotate-90 rtl:rotate-[-270deg]"
+                  )}
                 ></path>
               </svg>
             </a>

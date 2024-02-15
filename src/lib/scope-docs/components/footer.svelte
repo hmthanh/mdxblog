@@ -5,7 +5,7 @@
   // import { LocaleSwitch } from './locale-switch'
 
   // export function Footer({ menu }: { menu?: boolean }): ReactElement {
-  export const menu = []
+  export const menu: boolean = false
   export const hideSidebar = false
   // const config = useConfig()
 </script>
@@ -35,7 +35,7 @@
 </footer> -->
 
 <footer class="bg-gray-100 pb-[env(safe-area-inset-bottom)] dark:bg-neutral-900 print:bg-transparent">
-  <div class="mx-auto max-w-[90rem] gap-2 py-2 px-4 flex hidden">
+  <div class={cn("mx-auto max-w-[90rem] gap-2 py-2 px-4 ", menu ? "flex" : "hidden")}>
     <button
       title="Change theme"
       class="h-7 rounded-md px-2 text-left text-xs font-medium text-gray-600 transition-colors dark:text-gray-400 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-primary-100/5 dark:hover:text-gray-50"
