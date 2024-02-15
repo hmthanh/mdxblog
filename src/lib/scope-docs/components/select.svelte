@@ -4,7 +4,7 @@
   import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions, Transition } from "scope-ui"
   // import { CheckIcon } from "scope-docs"
   import { createEventDispatcher } from "svelte"
-  import { CheckIcon } from ".."
+  import { CheckIcon } from "scope-core/icons"
 
   interface MenuOption {
     key: string
@@ -33,8 +33,8 @@
 
   export let options: MenuOption[] | undefined
   export let selected: MenuOption | undefined
-  export let onChange: (option: MenuOption) => void
-  export let title: string | undefined
+  // export let onChange: (option: MenuOption) => void
+  // export let title: string | undefined = ''
   let _class
   export { _class as class }
 
@@ -46,6 +46,7 @@
 </Listbox> -->
 
 <button
+  aria-pressed="false"
   class={cn(
     "h-7 rounded-md px-2 text-left text-xs font-medium text-gray-600 transition-colors dark:text-gray-400",
     open

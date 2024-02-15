@@ -57,12 +57,11 @@
   // import { CopyIcon, WordWrapIcon } from "scope-docs"
   import cn from "clsx"
   import Button from "../button/button.svelte"
-  // import { Button } from "scope-ui/components"
 
   // export let hasCopyCode = false
   // export let filename: string = ""
-  // let _class = ""
-  // export { _class as class }
+  let _class = ""
+  export { _class as class }
 
   // const dispatch = createEventDispatcher()
 
@@ -113,8 +112,12 @@
 <!-- <CopyIcon getValue={() => preRef.current?.querySelector("code")?.textContent || ""} /> -->
 
 <pre
-  class="bg-primary-700/5 mb-4 overflow-x-auto rounded-xl subpixel-antialiased dark:bg-primary-300/10 text-[.9em] contrast-more:border contrast-more:border-primary-900/20 contrast-more:contrast-150 contrast-more:dark:border-primary-100/40 pt-12 pb-4"
+  class={cn(
+    "bg-primary-700/5 mb-4 overflow-x-auto rounded-xl subpixel-antialiased dark:bg-primary-300/10 text-[.9em] contrast-more:border contrast-more:border-primary-900/20 contrast-more:contrast-150 contrast-more:dark:border-primary-100/40 pt-12 pb-4",
+    _class
+  )}
   data-language="json"
-  data-theme="default">
+  data-theme="default"
+  {...$$restProps}>
   <slot />
   </pre>

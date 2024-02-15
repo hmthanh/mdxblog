@@ -10,7 +10,8 @@ export { default as hr } from "./hr.svelte"
 export { default as ol } from "./ol.svelte"
 export { default as ul } from "./ul.svelte"
 
-export { default as pre } from "./pre/pre.svelte"
+// export { default as pre } from "./pre/pre.svelte"
+
 // export { default as summary } from "./summary.svelte"
 // export { default as details } from "./details.svelte"
 // export { default as table } from "./table.svelte"

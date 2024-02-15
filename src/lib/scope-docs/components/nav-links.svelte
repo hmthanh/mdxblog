@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let flatDirectories
-  export let currentIndex
+  export let flatDirectories = []
+  export let currentIndex = []
 </script>
 
 <div

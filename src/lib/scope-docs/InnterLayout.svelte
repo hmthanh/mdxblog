@@ -9,11 +9,11 @@
   import Navbar from "./components/navbar.svelte"
   import SkipNavContent from "./components/skip-nav-content.svelte"
   import { ThemeSwitch } from "scope-docs/components"
-  export let filePath
-  export let pageMap
-  export let frontMatter
-  export let headings
-  export let timestamp
+  export let filePath = []
+  export let pageMap = []
+  export let frontMatter = []
+  export let headings = []
+  export let timestamp = ""
 
   const classes = {
     toc: cn("nextra-toc order-last hidden w-64 shrink-0 xl:block print:hidden"),

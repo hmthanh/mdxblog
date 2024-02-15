@@ -10,8 +10,8 @@
   // import NavbarItem from "scope-docs/components/navbaritem.svelte"
   // import {ActionArray} "scope-docs/utils/use-actions.ts"
 
-  export let flatDirectories
-  export let items
+  export let flatDirectories = []
+  export let items = []
 
   // const config = useConfig()
   // const activeRoute = useFSRoute()

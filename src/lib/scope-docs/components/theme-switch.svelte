@@ -29,7 +29,7 @@
   type ThemeOptions = z.infer<typeof themeOptionsSchema>
 
   // const options = getThemeOptions() // Fetch options
-  let theme = "light"
+  export let theme = "light"
 
   //   const { setTheme, resolvedTheme, theme = '' } = useTheme()
   // const config = useConfig().themeSwitch

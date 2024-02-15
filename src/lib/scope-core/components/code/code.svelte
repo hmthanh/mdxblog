@@ -26,7 +26,7 @@ export const Code = ({
 <script>
   import cn from "clsx"
 
-  export let children
+  // export let children
   let _class = ""
   export { _class as class }
 
@@ -43,5 +43,6 @@ export const Code = ({
   dir="ltr"
   {...$$restProps}
 >
-  {@html children}
+<slot/>
+  <!-- {@html children} -->
 </code>
