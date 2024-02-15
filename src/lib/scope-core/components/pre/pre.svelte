@@ -53,10 +53,10 @@
   </div> -->
 
 <script lang="ts">
-  import { createEventDispatcher } from "svelte"
+  // import { createEventDispatcher } from "svelte"
   // import { CopyIcon, WordWrapIcon } from "scope-docs"
   import cn from "clsx"
-  import Button from "../button/button.svelte"
+  // import Button from "../button/button.svelte"
 
   // export let hasCopyCode = false
   // export let filename: string = ""

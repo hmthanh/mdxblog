@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { ArrowRightIcon } from "scope-core/icons"
+
     
     </script>
 

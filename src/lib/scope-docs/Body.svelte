@@ -15,9 +15,9 @@
   import Timestamp from "./Timestamp.svelte"
 
   export let themeContext = { layout: "full", typesetting: "article" }
-  export let breadcrumb = {}
-  export let timestamp = 0
-  export let navigation = {}
+  export const breadcrumb = {}
+  export const timestamp = 0
+  export const navigation = {}
   let flatDocsDirectories
   let activeIndex
 

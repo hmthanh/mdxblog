@@ -1,6 +1,6 @@
 <script lang="ts">
   import cn from "clsx"
-  import { InformationIcon } from "scope-docs/icons"
+  import { InformationIcon } from "scope-core/icons"
 
   const typeToEmoji = {
     default: "💡",

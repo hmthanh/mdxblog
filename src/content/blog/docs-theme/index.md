@@ -26,13 +26,7 @@ This website itself is built with the Nextra Docs Theme.
 
 ### Deploy to Vercel
 
-You can start by creating your own Nextra site and deploying to Vercel by
-clicking the link:
-
-<a
-className="mt-3 inline-flex"
-target="\_blank"
-href="https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false"></a>
+You can start by creating your own Nextra site and deploying to Vercel by clicking the link:
 
 Vercel will fork the and deploy the site for you. Once done, every commit in the repository will be
 deployed automatically.

@@ -1,6 +1,6 @@
 <script lang="ts">
   import cn from "clsx"
-  import { ArrowRightIcon } from ".."
+  import { ArrowRightIcon } from "scope-core/icons"
   // import { ArrowRightIcon } from 'nextra/icons'
 
   function scrollToTop() {

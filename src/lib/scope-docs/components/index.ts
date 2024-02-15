@@ -1,4 +1,4 @@
-export { default as Select } from "./select.svelte"
+// export { default as Select } from "./select.svelte"
 export { default as ThemeSwitch } from "./theme-switch.svelte"
 export { default as Sidebar } from "./sidebar.svelte"
 export { default as NavToc } from "./toc.svelte"

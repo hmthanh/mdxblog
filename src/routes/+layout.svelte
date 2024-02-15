@@ -14,7 +14,7 @@
   // import ListboxLabel from "scope-ui/components/listbox/ListboxLabel.svelte"
   // import ListboxOption from "scope-ui/components/listbox/ListboxOption.svelte"
   // import ListboxOptions from "scope-ui/components/listbox/ListboxOptions.svelte"
-  import { CheckIcon, InnterLayout } from "scope-docs"
+  import {InnterLayout} from "scope-docs"
 </script>
 
 <PWA />

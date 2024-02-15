@@ -41,12 +41,12 @@
   // import { Collapse } from './collapse'
   // import { LocaleSwitch } from './locale-switch'
 
-  // export let docsDirectories
-  // export let flatDirectories
-  // export let fullDirectories
-  // export let asPopover: any | undefined
-  // export let headings: []
-  // export let includePlaceholder
+  export const docsDirectories = []
+  export const flatDirectories = []
+  export const fullDirectories = []
+  export const asPopover: any | undefined = false
+  export const headings = []
+  export const includePlaceholder = []
 </script>
 
 <aside

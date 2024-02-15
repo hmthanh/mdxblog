@@ -9,11 +9,11 @@
   import Navbar from "./components/navbar.svelte"
   import SkipNavContent from "./components/skip-nav-content.svelte"
   import { ThemeSwitch } from "scope-docs/components"
-  export let filePath = []
-  export let pageMap = []
-  export let frontMatter = []
+  // export let filePath = []
+  // export let pageMap = []
+  // export let frontMatter = []
   export let headings = []
-  export let timestamp = ""
+  export let timestamp = 0
 
   const classes = {
     toc: cn("nextra-toc order-last hidden w-64 shrink-0 xl:block print:hidden"),
@@ -52,6 +52,7 @@
   let themeContext = { layout: "full", typesetting: "article" }
 
   // const themeContext = { ...activeThemeContext, ...frontMatter }
+
   // const hideSidebar =
   //   !themeContext.sidebar ||
   //   themeContext.layout === 'raw' ||
@@ -131,7 +132,8 @@
     </Body>
     <!-- </ActiveAnchorProvider> -->
   </div>
-  <Footer menu={hideSidebar} />
+  <!-- hideSidebar -->
+  <Footer {hideSidebar} />
   <!-- {themeContext.footer &&
       renderComponent(config.footer.component, { menu: hideSidebar })} -->
 </div>

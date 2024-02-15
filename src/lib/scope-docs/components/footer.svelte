@@ -5,7 +5,8 @@
   // import { LocaleSwitch } from './locale-switch'
 
   // export function Footer({ menu }: { menu?: boolean }): ReactElement {
-  export let menu = []
+  export const menu = []
+  export const hideSidebar = false
   // const config = useConfig()
 </script>
 

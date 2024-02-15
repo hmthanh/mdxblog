@@ -1,4 +1,5 @@
 <script lang="ts">
+  import cn from "clsx"
   import SvelteSEO from "scope-seo"
   import Card from "$lib/components/Card.svelte"
   import EmailIcon from "$lib/scope-core/icons/email.svelte"
@@ -8,9 +9,7 @@
   import SEO from "$lib/components/SEO/index.svelte"
   import { fade } from "svelte/transition"
 
-  import cn from "clsx"
   // import { Transition } from "scope-ui/components/transitions"
-  import { Select, ThemeSwitch } from "scope-docs"
   import { Listbox, ListboxOption, ListboxOptions, ListboxButton, Transition } from "scope-ui"
 
   let title = "Contact"

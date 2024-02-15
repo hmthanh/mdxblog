@@ -1,7 +1,7 @@
 <script lang="ts">
   // export let date
   export let timestamp = new Date()
-  export let locale = ""
+  // export let locale = ""
 </script>
 
 {#if timestamp}

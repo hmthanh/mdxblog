@@ -7,7 +7,7 @@
   // import type { ReactElement } from 'react'
   // import { z } from 'zod'
   // import { useConfig } from '../contexts'
-  import Select from "./select.svelte"
+  // import Select from "./select.svelte"
   import { z } from "zod"
   import { browser } from "$app/environment"
   import { SunIcon, MoonIcon } from "scope-core/icons"
@@ -58,7 +58,7 @@
 </script>
 
 <script lang="ts">
-  $: icon = theme === "dark" ? MoonIcon : SunIcon
+  // $: icon = theme === "dark" ? MoonIcon : SunIcon
 </script>
 
 <!-- {#if browser}

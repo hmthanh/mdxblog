@@ -1,7 +1,7 @@
 <script>
   import { slide } from "svelte/transition"
   // import { ArrowRightIcon, MenuIcon } from "svelte-icons"
-  import { ArrowRightIcon, MenuIcon } from "scope-docs"
+  import { ArrowRightIcon, MenuIcon } from "scope-core/icons"
 
   export let items
   export let config

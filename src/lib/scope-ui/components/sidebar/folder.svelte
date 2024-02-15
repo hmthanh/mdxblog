@@ -1,6 +1,6 @@
 <script>
 	import Menusidebar from './menusidebar.svelte';
-	import { ArrowRightIcon } from 'scope-docs/icons';
+	import { ArrowRightIcon } from 'scope-core/icons';
 	import Collapse from 'scope-docs/components'
     import { useLocation } from 'svelte-routing'
     import { onMount, createEventDispatcher, getContext, setContext } from 'svelte'
