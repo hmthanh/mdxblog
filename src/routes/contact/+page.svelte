@@ -1,11 +1,11 @@
 <script>
   import Card from "$lib/components/Card.svelte"
-  import EmailIcon from "$lib/scope-core/icons/Email.svelte"
+  import EmailIcon from "$lib/scope-core/icons/email.svelte"
   import ExternalLink from "$lib/components/ExternalLink.svelte"
-  import FacebookIcon from "$lib/scope-core/icons/Facebook.svelte"
-  import WireIcon from "$lib/scope-core/icons/Wire.svelte"
-  import TelegramIcon from "$lib/scope-core/icons/Telegram.svelte"
-  import TwitterIcon from "$lib/scope-core/icons/Twitter.svelte"
+  import FacebookIcon from "$lib/scope-core/icons/facebook.svelte"
+  import WireIcon from "$lib/scope-core/icons/wire.svelte"
+  import TelegramIcon from "$lib/scope-core/icons/telegram.svelte"
+  import TwitterIcon from "$lib/scope-core/icons/twitter.svelte"
   import website from "$lib/config/website"
   const { contactEmail, facebookPageName, telegramUsername, twitterUserId, twitterUsername, wireUsername } = website
   import SEO from "$lib/components/SEO/index.svelte"

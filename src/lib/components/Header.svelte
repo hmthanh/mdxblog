@@ -1,5 +1,5 @@
 <script>
-  import CameraIcon from "$lib/scope-core/icons/Camera.svelte"
+  import CameraIcon from "$lib/scope-core/icons/camera.svelte"
 </script>
 
 <!-- <header class="header-container">

@@ -10,7 +10,7 @@
   import Select from "./select.svelte"
   import { z } from "zod"
   import { browser } from "$app/environment"
-  import { SunIcon, MoonIcon } from "../icons"
+  import { SunIcon, MoonIcon } from "scope-core/icons"
   import { toggleTheme } from "scope-core/store"
   let _class = ""
   export { _class as class }

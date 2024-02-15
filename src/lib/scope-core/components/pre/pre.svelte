@@ -1,5 +1,5 @@
 <!-- <script lang="ts">
-  import clsx from "clsx"
+  import cn from "cn"
   import {CopyToClipboard} from "scope-ui"
 
   export let hasCopyCode = false
@@ -8,7 +8,7 @@
   export { _class as class }
 </script>
 
-<table class={clsx("block overflow-x-scroll", _class)} {...$$restProps}><slot /></table>
+<table class={cn("block overflow-x-scroll", _class)} {...$$restProps}><slot /></table>
 
 <div className="nextra-code-block relative mt-6 first:mt-0">
     {filename && (
@@ -54,30 +54,31 @@
 
 <script lang="ts">
   import { createEventDispatcher } from "svelte"
-  import { CopyIcon, WordWrapIcon } from "scope-docs"
-  import clsx from "clsx"
-  import { Button } from "scope-ui/components"
+  // import { CopyIcon, WordWrapIcon } from "scope-docs"
+  import cn from "clsx"
+  import Button from "../button/button.svelte"
+  // import { Button } from "scope-ui/components"
 
-  export let hasCopyCode = false
-  export let filename: string
-  let _class = ""
-  export { _class as class }
+  // export let hasCopyCode = false
+  // export let filename: string = ""
+  // let _class = ""
+  // export { _class as class }
 
-  const dispatch = createEventDispatcher()
+  // const dispatch = createEventDispatcher()
 
-  const toggleWordWrap = () => {
-    // Define your toggleWordWrap logic here
-    const htmlDataset = document.documentElement.dataset
-    const hasWordWrap = "nextraWordWrap" in htmlDataset
-    if (hasWordWrap) {
-      delete htmlDataset.nextraWordWrap
-    } else {
-      htmlDataset.nextraWordWrap = ""
-    }
-  }
+  // const toggleWordWrap = () => {
+  //   // Define your toggleWordWrap logic here
+  //   const htmlDataset = document.documentElement.dataset
+  //   const hasWordWrap = "nextraWordWrap" in htmlDataset
+  //   if (hasWordWrap) {
+  //     delete htmlDataset.nextraWordWrap
+  //   } else {
+  //     htmlDataset.nextraWordWrap = ""
+  //   }
+  // }
 </script>
 
-<div class="nextra-code-block relative mt-6 {filename ? 'mt-0' : ''}">
+<!-- <div class={cn("nextra-code-block relative mt-6", _class, filename ? "mt-0" : "")}>
   {#if filename}
     <div
       class="absolute top-0 z-10 w-full truncate rounded-t-xl bg-primary-700/5 py-2 px-4 text-xs text-gray-700 dark:bg-primary-300/10 dark:text-gray-200"
@@ -86,7 +87,7 @@
     </div>
   {/if}
   <pre
-    class={clsx(
+    class={cn(
       "bg-primary-700/5 mb-4 overflow-x-auto rounded-xl subpixel-antialiased dark:bg-primary-300/10 text-[.9em]",
       "contrast-more:border contrast-more:border-primary-900/20 contrast-more:contrast-150 contrast-more:dark:border-primary-100/40",
       filename ? "pt-12 pb-4" : "py-4"
@@ -95,7 +96,7 @@
         <slot />
       </pre>
   <div
-    class={clsx(
+    class={cn(
       "opacity-0 transition hover:opacity-100 focus-within:opacity-100",
       "flex gap-1 absolute m-[11px] right-0",
       filename ? "top-8" : "top-0"
@@ -108,5 +109,12 @@
       <CopyIcon getValue={() => ""} />
     {/if}
   </div>
-</div>
+</div> -->
 <!-- <CopyIcon getValue={() => preRef.current?.querySelector("code")?.textContent || ""} /> -->
+
+<pre
+  class="bg-primary-700/5 mb-4 overflow-x-auto rounded-xl subpixel-antialiased dark:bg-primary-300/10 text-[.9em] contrast-more:border contrast-more:border-primary-900/20 contrast-more:contrast-150 contrast-more:dark:border-primary-100/40 pt-12 pb-4"
+  data-language="json"
+  data-theme="default">
+  <slot />
+  </pre>
