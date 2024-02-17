@@ -11,6 +11,8 @@ import remarkGfm from "remark-gfm"
 import remarkMath from "remark-math"
 import remarkReadingTime from "remark-reading-time"
 import remarkUnwrapImages from "remark-unwrap-images"
+import {remarkCustomHeadingId} from "./remarkplugins/remark-custom-heading-id.js"
+import {remarkHeadings} from "./remarkplugins/remark-headings.js"
 // import rehypeRaw from "rehype-raw"
 // import theme from "./theme.json"
 import { theme } from "./theme.js"
@@ -54,7 +56,7 @@ const mdsvexOptions = {
       return `{@html \`${html}\` }`
     },
   },
-  remarkPlugins: [remarkReadingTime, remarkUnwrapImages, remarkGfm, [remarkToc, { tight: true }]],
+  remarkPlugins: [remarkCustomHeadingId, remarkReadingTime, remarkUnwrapImages, remarkGfm, [remarkToc, { tight: true }]],
   rehypePlugins: [remarkMath, rehypeKatex, rehypeSlug, [rehypePrettyCode, { ...DEFAULT_REHYPE_PRETTY_CODE_OPTIONS }]],
   layout: {
     blog: "./src/lib/layout/blog.svelte",

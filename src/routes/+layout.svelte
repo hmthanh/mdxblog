@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import SvelteSEO from "scope-seo"
   import "$lib/styles/normalise.css"
   import "$lib/styles/app.css"

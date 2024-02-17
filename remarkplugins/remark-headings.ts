@@ -2,16 +2,9 @@ import Slugger from "github-slugger"
 import type { Parent, Root } from "mdast"
 import type { Plugin } from "unified"
 import { visit } from "unist-util-visit"
-import { MARKDOWN_EXTENSION_REGEX } from "./constants"
+import { MARKDOWN_EXTENSION_REGEX } from "./constants.js"
 // import type { Heading } from "../types"
-import type { HProperties } from "./remark-custom-heading-id"
-import type { Heading as MDASTHeading } from "mdast"
 
-export type Heading = {
-  depth: MDASTHeading["depth"]
-  value: string
-  id: string
-}
 
 const getFlattenedValue = (node: Parent): string =>
   node.children
@@ -24,7 +17,7 @@ export const remarkHeadings: Plugin<[{ exportName?: string; isRemoteContent?: bo
   exportName = "__toc",
   isRemoteContent,
 }) => {
-  const headings: (Heading | string)[] = []
+  const headings = []
   let hasJsxInH1: boolean
   let title: string
 
@@ -53,7 +46,7 @@ export const remarkHeadings: Plugin<[{ exportName?: string; isRemoteContent?: bo
           }
 
           node.data ||= {}
-          const headingProps: HProperties = (node.data.hProperties ||= {})
+          const headingProps = (node.data.hProperties ||= {})
           if (SKIP_FOR_PARENT_NAMES.has((parent as any).name)) {
             delete headingProps.id
           } else {
