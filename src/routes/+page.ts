@@ -12,7 +12,7 @@ export const load: PageLoad = async () => {
 
       if (fileMeta && typeof fileMeta === "object" && slug) {
         if ("metadata" in fileMeta) {
-          const metadata = fileMeta.metadata as IPostMeta
+          const metadata =  fileMeta.metadata as IPostMeta
           return { ...metadata, slug }
         }
       }

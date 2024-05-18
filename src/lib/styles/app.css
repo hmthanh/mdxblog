@@ -168,3 +168,7 @@ input[type="search"] {
     opacity: 1;
   }
 }
+
+html {
+  font-family: "Segoe UI", "Segoe UI Symbol", "Noto Color Emoji";
+}
