@@ -24,8 +24,6 @@ Nextra Docs Theme is a theme that includes almost everything you need to build a
 modern documentation website. It includes a top navigation bar, a search bar, a
 pages sidebar, a TOC sidebar, and other built-in components.
 
-<Canvas/>
-
 This website itself is built with the Nextra Docs Theme.
 
 ## Quick Start from Template
