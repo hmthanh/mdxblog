@@ -8,6 +8,7 @@
   export let data
 
   const { page, post, imageData } = data
+  // console.log(page)
 
   if (browser && !document.lazyloadInstance) {
     document.lazyloadInstance = new lazyload()

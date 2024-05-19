@@ -549,9 +549,6 @@
       >discussions on GitHub<span class="sr-only select-none"> (opens in a new tab)</span>
     </a>!
   </p>
-
-  <a href="/best-medium-format-camera-for-starting-out">best-medium-format-camera-for-starting-out</a>
-  <a href="/hmthanh/best-medium-format-camera-for-starting-out">best-medium-format-camera-for-starting-out</a>
 </main>
 
 <style lang="css">

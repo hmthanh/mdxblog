@@ -1,5 +1,4 @@
 // import readingTime from "reading-time";
-
 /** @type {import('./$types').PageLoad} */
 export async function load({ params, url }) {
   const { slug } = params
@@ -25,6 +24,7 @@ export async function load({ params, url }) {
   // console.log("postResult ", postResult)
   const { default: page, metadata } = postResult
   // const { default: imageData } = imageDataResult
+  // console.log("go")
 
   if (!page) {
     return {

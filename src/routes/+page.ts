@@ -5,7 +5,7 @@ export const load: PageLoad = async () => {
   const mdModules = import.meta.glob("../content/blog/**/index.md")
 
   const posts = await Promise.all(
-    Object.keys(mdModules).map(async (path) => {
+    Object.keys(mdModules).map(async (path:string) => {
       const fileMeta = await mdModules[path]()
       const slug = path.split("/").at(-2)
       const meta = fileMeta

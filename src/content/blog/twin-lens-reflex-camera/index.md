@@ -17,7 +17,10 @@ tags: ""
   import ExternalLink from '$lib/components/ExternalLink.svelte';
 </script>
 
-## What is a Twin Lens Reflex Camera?
+## What is a Twin Lens Reflex Camera?22
+
+
+$$x^2$$
 
 So far, I've written about three types of generative models, [GAN](https://lilianweng.github.io/posts/2017-08-20-gan/), [VAE](https://lilianweng.github.io/posts/2018-08-12-vae/), and [Flow-based](https://lilianweng.github.io/posts/2018-10-13-flow-models/) models. They have shown great success in generating high-quality samples, but each has some limitations of its own.
 GAN models are known for potentially unstable training and less diversity in generation due to their adversarial training nature.

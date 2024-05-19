@@ -3,6 +3,8 @@
   import "$lib/styles/normalise.css"
   import "$lib/styles/app.css"
 
+  import "katex/dist/katex.min.css"
+
   import PWA from "$lib/components/PWA.svelte"
   // import "scope-ui/listbox"
   // import "scope-docs/components/theme-switch.svelte";
@@ -14,7 +16,7 @@
   // import ListboxLabel from "scope-ui/components/listbox/ListboxLabel.svelte"
   // import ListboxOption from "scope-ui/components/listbox/ListboxOption.svelte"
   // import ListboxOptions from "scope-ui/components/listbox/ListboxOptions.svelte"
-  import {InnterLayout} from "scope-docs"
+  import { InnterLayout } from "scope-docs"
 </script>
 
 <PWA />
